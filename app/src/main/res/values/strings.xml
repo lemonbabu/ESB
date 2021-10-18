@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Engineering Smart Book</string>
+    <string name="splash_title">Discover Your Knowledge</string>
+    <string name="splash_contain">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et</string>
+    <string name="facebook_icon">Facebook Icon</string>
+    <string name="twitter_icon">Twitter Icon</string>
+    <string name="youtube_icon">Youtube Icon</string>
+    <string name="linkdin_icon">Linkdin Icon</string>
+    <string name="log_in_button">Log In</string>
+    <string name="sign_up_button">Sign Up</string>
+    <string name="forgot_password_login">Forgot Password?</string>
+    <string name="remember_me_login">Remember me</string>
+    <string name="password_hints">Password</string>
+    <string name="phone_number_hints">Phone Number</string>
+    <string name="logo_esb">Logo ESB</string>
+    <string name="phone_icon">Phone Icon</string>
+    <string name="password_icon">Password Icon</string>
+    <string name="btn_next_splash">Next</string>
+    <string name="splash_screen_image">splash screen image</string>
+    <string name="confirm_password">Confirm Password</string>
+</resources>
