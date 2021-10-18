@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
+    <android.support.constraint.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/primary"
-    tools:context=".View.Auth.Login">
-
+    tools:context=".View.Auth.OtpVerify">
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -24,117 +23,106 @@
             android:src="@drawable/logo_esb"
             android:contentDescription="@string/logo_esb" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
+
+        <TextView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="50dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="50dp"
-            android:layout_marginBottom="20dp"
-            android:orientation="horizontal">
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="10dp"
-                android:src="@drawable/ic_awesome_phone_alt"
-                android:contentDescription="@string/phone_icon" />
-
-            <EditText
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@color/white"
-                android:hint="@string/phone_number_hints"
-                android:textSize="@dimen/text18"
-                android:autofillHints="017"
-                android:inputType= "phone" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="50dp"
-            android:layout_marginEnd="50dp"
-            android:layout_marginBottom="40dp"
-            android:orientation="horizontal">
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="10dp"
-                android:src="@drawable/ic_material_lock"
-                android:contentDescription="@string/password_icon" />
-
-            <EditText
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@color/white"
-                android:hint="@string/password_hints"
-                android:inputType="textPassword"
-                android:textSize="@dimen/text18"
-                android:layout_marginTop="5dp"
-                android:importantForAutofill="no" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="50dp"
-            android:layout_marginEnd="50dp"
+            android:layout_gravity="center"
             android:layout_marginBottom="10dp"
+            android:textSize="@dimen/text25"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:text="Verify your Phone"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:layout_marginEnd="50dp"
+            android:layout_marginBottom="30dp"
             android:orientation="horizontal">
 
-            <Switch
-                style="@style/Custom.Widget.SwitchCompat"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="10dp" />
-
-
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="20dp"
+                android:layout_gravity="center"
+                android:layout_marginEnd="10dp"
                 android:textSize="@dimen/text15"
-                android:text="@string/remember_me_login"/>
+                android:text="@string/verification_code_sent_to"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/forgot_password_login"
-                android:textColor="@color/primary"
-                android:textSize="@dimen/text15" />
+                android:layout_gravity="center"
+                android:textSize="@dimen/text15"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:text="@string/sample_phone_number"/>
 
         </LinearLayout>
+
+
+
+
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="45dp"
+            android:layout_marginStart="50dp"
+            android:layout_marginEnd="50dp"
+            android:layout_marginBottom="30dp"
+            android:layout_gravity="center"
+            android:background="@drawable/bg_button_shave_white_round"
+            android:hint="@string/otp_code"
+            android:inputType="number"
+            android:textSize="@dimen/text18"
+            android:textAlignment="center"
+            android:importantForAutofill="no" />
+
+
 
         <Button
-            android:id="@+id/btnLogin"
+            android:id="@+id/btnConfirmCode"
             android:layout_width="match_parent"
             android:layout_height="45dp"
             android:layout_marginStart="50dp"
-            android:layout_marginTop="20dp"
             android:layout_marginEnd="50dp"
+            android:layout_marginBottom="30dp"
             android:background="@drawable/bg_button_shape_corner_round"
-            android:text="@string/log_in_button"
+            android:text="@string/confirm_code"
             android:textAllCaps="false"
             android:textColor="@color/white"
             android:textStyle="bold"
             android:textSize="@dimen/text25" />
 
-        <Button
-            android:id="@+id/btnSingUpNav"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="45dp"
+            android:layout_height="wrap_content"
             android:layout_marginStart="50dp"
-            android:layout_marginTop="20dp"
             android:layout_marginEnd="50dp"
-            android:background="@drawable/bg_button_shave_white_round"
-            android:text="@string/sign_up_button"
-            android:textAllCaps="false"
-            android:textColor="@color/primary"
-            android:textSize="@dimen/text20" />
+            android:layout_marginBottom="20dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginEnd="10dp"
+                android:textSize="@dimen/text15"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:text="@string/sample_timer"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textSize="@dimen/text15"
+                android:text="@string/reset_confirmation_code"/>
+
+        </LinearLayout>
+
 
 
     </LinearLayout>

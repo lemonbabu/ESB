@@ -2,11 +2,18 @@
     <!-- Base application theme. -->
     <style name="Theme.EngineeringSmartBook" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/purple_500</item>
+        <item name="colorPrimary">@color/primary</item>
         <item name="colorPrimaryDark">@color/purple_700</item>
-        <item name="colorAccent">@color/teal_200</item>
-        <item name="fontFamily">@font/maven_pro</item>
+        <item name="colorAccent">@color/secondary</item>
         <!-- Customize your theme here. -->
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="fontFamily">@font/maven_pro</item>
+
+    </style>
+
+    <style name="Theme.EngineeringSmartBook.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
     </style>
 
     <style name="Custom.Widget.SwitchCompat" parent="Widget.AppCompat.CompoundButton.Switch" >

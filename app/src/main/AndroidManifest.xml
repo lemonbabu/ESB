@@ -4,28 +4,25 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:icon="@drawable/logo_esb"
+        android:label="@string/app_short_name"
+        android:roundIcon="@drawable/logo_esb"
         android:supportsRtl="true"
         android:theme="@style/Theme.EngineeringSmartBook">
         <activity
-            android:name=".SignUp"
+            android:name=".View.Auth.OtpVerify"
             android:exported="false" />
         <activity
-            android:name=".Login"
+            android:name=".View.Auth.SignUp"
             android:exported="false" />
         <activity
-            android:name=".SplashScreen"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:name=".View.Auth.Login"
+            android:exported="false" />
         <activity
             android:name=".MainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".View.SplashScreen"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

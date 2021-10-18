@@ -1,10 +1,12 @@
-package com.texon.engineeringsmartbook;
+package com.texon.engineeringsmartbook.View;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
+
+import com.texon.engineeringsmartbook.R;
+import com.texon.engineeringsmartbook.View.Auth.Login;
 
 public class SplashScreen extends AppCompatActivity {
 

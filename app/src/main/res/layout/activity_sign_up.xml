@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/primary"
-    tools:context=".SignUp">
+    tools:context=".View.Auth.SignUp">
 
 
     <LinearLayout
@@ -28,7 +28,60 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="50dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginEnd="50dp"
+            android:layout_marginBottom="20dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:src="@drawable/ic_awesome_user_alt"
+                android:contentDescription="@string/phone_icon" />
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:hint="@string/full_name"
+                android:textSize="@dimen/text18"
+                android:autofillHints="017"
+                android:inputType= "text" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:layout_marginEnd="50dp"
+            android:layout_marginBottom="20dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:src="@drawable/ic_material_mail"
+                android:layout_marginTop="5dp"
+                android:contentDescription="@string/phone_icon" />
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:hint="@string/email"
+                android:textSize="@dimen/text18"
+                android:autofillHints="017"
+                android:inputType= "textEmailAddress" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
             android:layout_marginEnd="50dp"
             android:layout_marginBottom="20dp"
             android:orientation="horizontal">
@@ -108,29 +161,31 @@
 
 
         <Button
+            android:id="@+id/btnSignUp"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="45dp"
             android:layout_marginStart="50dp"
             android:layout_marginTop="20dp"
             android:layout_marginEnd="50dp"
             android:background="@drawable/bg_button_shape_corner_round"
-            android:text="@string/log_in_button"
+            android:text="@string/sign_up_button"
             android:textAllCaps="false"
             android:textColor="@color/white"
             android:textStyle="bold"
-            android:textSize="@dimen/text30" />
+            android:textSize="@dimen/text25" />
 
         <Button
+            android:id="@+id/btnLoginNav"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="45dp"
             android:layout_marginStart="50dp"
             android:layout_marginTop="20dp"
             android:layout_marginEnd="50dp"
             android:background="@drawable/bg_button_shave_white_round"
-            android:text="@string/sign_up_button"
+            android:text="@string/log_in_button"
             android:textAllCaps="false"
             android:textColor="@color/primary"
-            android:textSize="@dimen/text25" />
+            android:textSize="@dimen/text20" />
 
 
     </LinearLayout>
@@ -145,32 +200,28 @@
         app:layout_constraintBottom_toBottomOf="@+id/linearLayout"
         tools:layout_editor_absoluteX="50dp">
 
-        <ImageView
+        <ImageButton
             android:id="@+id/iconFb"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="10dp"
             android:src="@drawable/ic_facebook_square"
             android:contentDescription="@string/facebook_icon" />
 
-        <ImageView
+        <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="10dp"
             android:src="@drawable/ic__twitter_square"
             android:contentDescription="@string/twitter_icon" />
 
-        <ImageView
+        <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="10dp"
             android:src="@drawable/ic_youtube"
             android:contentDescription="@string/youtube_icon" />
 
-        <ImageView
+        <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="10dp"
             android:src="@drawable/ic_linkedin"
             android:contentDescription="@string/linkdin_icon" />
 
