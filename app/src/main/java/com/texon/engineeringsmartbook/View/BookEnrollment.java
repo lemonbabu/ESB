@@ -1,13 +1,14 @@
 package com.texon.engineeringsmartbook.View;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.ImageButton;
 
 import com.texon.engineeringsmartbook.R;
 import com.texon.engineeringsmartbook.View.Auth.Login;
+import com.texon.engineeringsmartbook.View.Auth.UserProfile;
 
 public class BookEnrollment extends AppCompatActivity {
 
@@ -36,6 +37,12 @@ public class BookEnrollment extends AppCompatActivity {
 
         btnApply.setOnClickListener(v -> {
             Intent intent = new Intent(getApplicationContext(), SuccessfullyEnrolled.class);
+            startActivity(intent);
+            finish();
+        });
+
+        btnProfileMenu.setOnClickListener(v -> {
+            Intent intent = new Intent(getApplicationContext(), UserProfile.class);
             startActivity(intent);
             finish();
         });

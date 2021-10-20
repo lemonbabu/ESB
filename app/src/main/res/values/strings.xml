@@ -38,4 +38,8 @@
     <string name="btn_apply">Apply</string>
     <string name="what_is_it">What is it?</string>
     <string name="book_serial_number">Book Serial Number</string>
+    <string name="demo_user">Mr. Mehedi Hssan</string>
+    <string name="sample_email_address">username@mail.com</string>
+    <string name="logout">Logout</string>
+    <string name="edit_profile">Edit Profile</string>
 </resources>
