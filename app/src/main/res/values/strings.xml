@@ -27,4 +27,15 @@
     <string name="otp_code">OTP Code</string>
     <string name="verification_code_sent_to">Verification code sent to:</string>
     <string name="sample_phone_number">017 55005500</string>
+    <string name="app_bar_home_button">App bar home button</string>
+    <string name="engineering">Engineering</string>
+    <string name="smart_book">Smart Book</string>
+    <string name="successfully">Successfully</string>
+    <string name="you_are_done_to_enrolled_this_book">You are done to enrolled this book.</string>
+    <string name="now_you_can_access_the_video_topics">Now you can access the video topics</string>
+    <string name="btn_text_get_this_course">Get this Course</string>
+    <string name="book_access">Book Access</string>
+    <string name="btn_apply">Apply</string>
+    <string name="what_is_it">What is it?</string>
+    <string name="book_serial_number">Book Serial Number</string>
 </resources>

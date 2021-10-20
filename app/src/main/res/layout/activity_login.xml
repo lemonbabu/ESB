@@ -8,13 +8,12 @@
     android:background="@color/primary"
     tools:context=".View.Auth.Login">
 
-
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="100dp"
-        android:background="@drawable/bg_while_round"
+        android:background="@drawable/bg_white_round"
         android:orientation="vertical">
 
         <ImageView
@@ -92,7 +91,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="10dp" />
 
-
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -135,7 +133,6 @@
             android:textAllCaps="false"
             android:textColor="@color/primary"
             android:textSize="@dimen/text20" />
-
 
     </LinearLayout>
 

@@ -10,6 +10,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.EngineeringSmartBook">
         <activity
+            android:name=".View.Auth.UserProfile"
+            android:exported="false" />
+        <activity
+            android:name=".View.BookEnrollment"
+            android:exported="false" />
+        <activity
+            android:name=".View.SuccessfullyEnrolled"
+            android:exported="false" />
+        <activity
             android:name=".View.Auth.OtpVerify"
             android:exported="false" />
         <activity

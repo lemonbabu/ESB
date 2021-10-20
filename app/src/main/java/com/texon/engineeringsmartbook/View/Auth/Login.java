@@ -1,6 +1,5 @@
 package com.texon.engineeringsmartbook.View.Auth;
 
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -8,6 +7,7 @@ import android.os.Bundle;
 import android.widget.Button;
 
 import com.texon.engineeringsmartbook.R;
+import com.texon.engineeringsmartbook.View.BookEnrollment;
 
 public class Login extends AppCompatActivity {
 
@@ -27,6 +27,12 @@ public class Login extends AppCompatActivity {
             finish();
         });
 
+        btnLogin.setOnClickListener(v ->{
+            Intent intent = new Intent(getApplicationContext(), BookEnrollment.class);
+            startActivity(intent);
+            finish();
+        });
+
     }
 
     @Override
@@ -35,13 +41,7 @@ public class Login extends AppCompatActivity {
                 .setIcon(android.R.drawable.ic_dialog_alert)
                 .setTitle("Closing Activity")
                 .setMessage("Are you sure? Do you want to exit this app?")
-                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        finish();
-                    }
-
-                })
+                .setPositiveButton("Yes", (dialog, which) -> finish())
                 .setNegativeButton("No", null)
                 .show();
     }
