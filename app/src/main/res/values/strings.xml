@@ -42,4 +42,5 @@
     <string name="sample_email_address">username@mail.com</string>
     <string name="logout">Logout</string>
     <string name="edit_profile">Edit Profile</string>
+    <string name="your_books">Your Books</string>
 </resources>

@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/primary"
+    android:screenOrientation="portrait"
     tools:context=".View.Auth.UserProfile">
 
     <Space
@@ -129,16 +130,16 @@
             android:background="@drawable/bg_button_shape_corner_round"/>
 
         <Button
-            android:layout_toEndOf="@+id/btnLogOut"
             android:id="@+id/btnEditProfile"
             android:layout_width="160dp"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
+            android:layout_toEndOf="@+id/btnLogOut"
+            android:background="@drawable/bg_white_round"
             android:text="@string/edit_profile"
+            android:textAllCaps="false"
             android:textColor="@color/primary"
             android:textSize="@dimen/text20"
-            android:textStyle="bold"
-            android:textAllCaps="false"
-            android:background="@drawable/bg_button_shave_white_round"/>
+            android:textStyle="bold" />
 
     </RelativeLayout>
 

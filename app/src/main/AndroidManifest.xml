@@ -28,7 +28,7 @@
             android:name=".View.Auth.Login"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".Dashboard"
             android:exported="false" />
         <activity
             android:name=".View.SplashScreen"

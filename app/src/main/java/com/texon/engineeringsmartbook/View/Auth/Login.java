@@ -6,8 +6,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.Button;
 
+import com.texon.engineeringsmartbook.Dashboard;
 import com.texon.engineeringsmartbook.R;
-import com.texon.engineeringsmartbook.View.BookEnrollment;
 
 public class Login extends AppCompatActivity {
 
@@ -28,7 +28,7 @@ public class Login extends AppCompatActivity {
         });
 
         btnLogin.setOnClickListener(v ->{
-            Intent intent = new Intent(getApplicationContext(), BookEnrollment.class);
+            Intent intent = new Intent(getApplicationContext(), Dashboard.class);
             startActivity(intent);
             finish();
         });
