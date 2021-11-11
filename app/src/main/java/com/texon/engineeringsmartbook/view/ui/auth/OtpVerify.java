@@ -1,4 +1,4 @@
-package com.texon.engineeringsmartbook.View.Auth;
+package com.texon.engineeringsmartbook.view.ui.auth;
 
 import android.content.Intent;
 import androidx.appcompat.app.AppCompatActivity;

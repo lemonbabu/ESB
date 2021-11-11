@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:background="@color/primary"
     android:screenOrientation="portrait"
-    tools:context=".View.Auth.OtpVerify">
+    tools:context=".view.ui.auth.OtpVerify">
 
     <LinearLayout
         android:id="@+id/linearLayout"

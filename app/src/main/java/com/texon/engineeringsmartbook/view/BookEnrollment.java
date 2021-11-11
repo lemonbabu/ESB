@@ -1,4 +1,4 @@
-package com.texon.engineeringsmartbook.View;
+package com.texon.engineeringsmartbook.view;
 
 import android.content.Intent;
 import androidx.appcompat.app.AppCompatActivity;
@@ -7,8 +7,8 @@ import android.widget.Button;
 import android.widget.ImageButton;
 
 import com.texon.engineeringsmartbook.R;
-import com.texon.engineeringsmartbook.View.Auth.Login;
-import com.texon.engineeringsmartbook.View.Auth.UserProfile;
+import com.texon.engineeringsmartbook.view.ui.auth.Login;
+import com.texon.engineeringsmartbook.view.ui.auth.UserProfile;
 
 public class BookEnrollment extends AppCompatActivity {
 

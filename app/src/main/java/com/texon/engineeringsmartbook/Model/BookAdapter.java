@@ -13,36 +13,34 @@ import com.texon.engineeringsmartbook.R;
 import java.util.List;
 
 public class BookAdapter extends RecyclerView.Adapter<BookAdapter.MyViewHolder> {
-    private List<BookModel> moviesList;
+    private List<BookModel> booksList;
     class MyViewHolder extends RecyclerView.ViewHolder {
-        TextView title, year, genre;
+        TextView bookTitle, bookPrice;
         MyViewHolder(View view) {
             super(view);
-            title = view.findViewById(R.id.title);
-            genre = view.findViewById(R.id.genre);
-            year = view.findViewById(R.id.year);
+            bookTitle = view.findViewById(R.id.txtBookTitle);
+            bookPrice = view.findViewById(R.id.txtBookPrice);
         }
     }
-    public BookAdapter(List<BookModel> moviesList) {
-        this.moviesList = moviesList;
+    public BookAdapter(List<BookModel> booksList) {
+        this.booksList = booksList;
     }
     @NonNull
     @Override
     public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View itemView = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.book_card_view, parent, false);
+                .inflate(R.layout.card_book__view, parent, false);
         return new MyViewHolder(itemView);
     }
 
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
-        BookModel movie = moviesList.get(position);
-        holder.title.setText(movie.getTitle());
-        holder.genre.setText(movie.getGenre());
-        holder.year.setText(movie.getYear());
+        BookModel movie = booksList.get(position);
+        holder.bookTitle.setText(movie.getTitle());
+        holder.bookPrice.setText(movie.getPrice());
     }
     @Override
     public int getItemCount() {
-        return moviesList.size();
+        return booksList.size();
     }
 }

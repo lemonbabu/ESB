@@ -10,28 +10,37 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.EngineeringSmartBook">
         <activity
-            android:name=".View.Auth.UserProfile"
+            android:name=".PaymentMethod"
             android:exported="false" />
         <activity
-            android:name=".View.BookEnrollment"
+            android:name=".AddressConfirmation"
             android:exported="false" />
         <activity
-            android:name=".View.SuccessfullyEnrolled"
+            android:name=".BookDetails"
             android:exported="false" />
         <activity
-            android:name=".View.Auth.OtpVerify"
+            android:name=".view.ui.auth.UserProfile"
             android:exported="false" />
         <activity
-            android:name=".View.Auth.SignUp"
+            android:name=".view.BookEnrollment"
             android:exported="false" />
         <activity
-            android:name=".View.Auth.Login"
+            android:name=".view.SuccessfullyEnrolled"
+            android:exported="false" />
+        <activity
+            android:name=".view.ui.auth.OtpVerify"
+            android:exported="false" />
+        <activity
+            android:name=".view.ui.auth.SignUp"
+            android:exported="false" />
+        <activity
+            android:name=".view.ui.auth.Login"
             android:exported="false" />
         <activity
             android:name=".Dashboard"
             android:exported="false" />
         <activity
-            android:name=".View.SplashScreen"
+            android:name=".view.SplashScreen"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

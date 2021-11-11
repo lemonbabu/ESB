@@ -1,4 +1,4 @@
-package com.texon.engineeringsmartbook.View.Auth;
+package com.texon.engineeringsmartbook.view.ui.auth;
 
 import android.content.Intent;
 import androidx.appcompat.app.AlertDialog;
@@ -6,29 +6,28 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.Button;
 
-import com.texon.engineeringsmartbook.Dashboard;
 import com.texon.engineeringsmartbook.R;
 
-public class Login extends AppCompatActivity {
+public class SignUp extends AppCompatActivity {
 
-    Button btnLogin, btnSignUpNav;
+    Button btnSignUp, btnLoginNav;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
+        setContentView(R.layout.activity_sign_up);
 
-        btnLogin = findViewById(R.id.btnLogin);
-        btnSignUpNav = findViewById(R.id.btnSingUpNav);
+        btnLoginNav = findViewById(R.id.btnLoginNav);
+        btnSignUp = findViewById(R.id.btnSignUp);
 
-        btnSignUpNav.setOnClickListener(v ->{
-            Intent intent = new Intent(getApplicationContext(), SignUp.class);
+        btnLoginNav.setOnClickListener(v -> {
+            Intent intent = new Intent(getApplicationContext(), Login.class);
             startActivity(intent);
             finish();
         });
 
-        btnLogin.setOnClickListener(v ->{
-            Intent intent = new Intent(getApplicationContext(), Dashboard.class);
+        btnSignUp.setOnClickListener(v -> {
+            Intent intent = new Intent(getApplicationContext(), OtpVerify.class);
             startActivity(intent);
             finish();
         });

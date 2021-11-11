@@ -1,8 +1,10 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".Dashboard">
 
     <RelativeLayout
         android:id="@+id/header"
@@ -44,7 +46,7 @@
                 android:id="@+id/linearLayout2"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
-                android:layout_margin="10dp"
+                android:layout_margin="20dp"
                 android:gravity="center"
                 android:orientation="horizontal"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -55,27 +57,37 @@
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:text="@string/your_books"
-                    app:drawableTopCompat="@drawable/ic_material_mail" />
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginTop="5dp"
+                    android:drawablePadding="-10dp"
+                    android:textAlignment="center"
+                    app:drawableTopCompat="@drawable/ic_books_button" />
 
                 <TextView
                     android:layout_width="100dp"
                     android:layout_height="100dp"
-                    android:drawablePadding="10dp"
-                    android:text="@string/your_books"
-                    app:drawableTopCompat="@drawable/ic_material_mail" />
+                    android:text="@string/your_order"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginTop="5dp"
+                    android:drawablePadding="-10dp"
+                    android:textAlignment="center"
+                    app:drawableTopCompat="@drawable/ic_orders" />
 
                 <TextView
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:text="@string/your_books"
-                    app:drawableTopCompat="@drawable/ic_material_mail" />
+                    android:drawablePadding="-5dp"
+                    android:textAlignment="center"
+                    app:drawableTopCompat="@drawable/ic_help" />
 
             </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/linearLayout3"
                 android:layout_width="match_parent"
-                android:layout_height="20dp"
+                android:layout_height="30dp"
+                android:layout_margin="10dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
@@ -84,88 +96,108 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_marginEnd="20dp"
+                    android:layout_marginStart="10dp"
                     android:text="@string/your_books"
+                    android:textSize="20sp"
                     android:textColor="@color/primary" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_marginEnd="20dp"
-                    android:text="@string/your_books" />
+                    android:text="@string/free_video"
+                    android:textSize="20sp"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_marginEnd="20dp"
-                    android:text="@string/your_books" />
+                    android:text="@string/promo"
+                    android:textSize="20sp"/>
 
             </LinearLayout>
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recyclerViewBookList"
                 android:layout_width="match_parent"
-                android:layout_height="130dp"
+                android:layout_height="220dp"
                 android:layout_margin="10dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/linearLayout3"
-                tools:listitem="@layout/book_card_view" />
+                tools:listitem="@layout/card_book__view" />
 
-            <LinearLayout
+            <RelativeLayout
                 android:id="@+id/linearLayout4"
                 android:layout_width="match_parent"
-                android:layout_height="20dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/recyclerViewBookList">
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="200dp"
                     android:layout_height="match_parent"
-                    android:layout_marginEnd="20dp"
-                    android:text="@string/your_books"
-                    android:textColor="@color/primary" />
+                    android:layout_marginStart="20dp"
+                    android:text="@string/your_access_books"
+                    android:textSize="20sp"
+                    android:textAlignment="viewStart"
+                    android:layout_alignParentStart="true"/>
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="100dp"
                     android:layout_height="match_parent"
+                    android:layout_alignParentEnd="true"
                     android:layout_marginEnd="20dp"
-                    android:text="@string/your_books" />
+                    android:text="@string/store"
+                    android:textSize="20sp"
+                    android:textAlignment="viewEnd"
+                    android:textColor="@color/primary" />
 
-            </LinearLayout>
+            </RelativeLayout>
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/recyclerViewBookListAccess"
                     android:layout_width="match_parent"
-                    android:layout_height="130dp"
+                    android:layout_height="220dp"
                     android:layout_margin="10dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/linearLayout4"
-                    tools:listitem="@layout/book_card_view" />
+                    tools:listitem="@layout/card_book__view" />
 
-            <LinearLayout
+            <RelativeLayout
                 android:id="@+id/linearLayout5"
                 android:layout_width="match_parent"
-                android:layout_height="20dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/recyclerViewBookListAccess">
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="200dp"
                     android:layout_height="match_parent"
-                    android:layout_marginEnd="20dp"
-                    android:text="@string/your_books"
-                    android:textColor="@color/primary" />
+                    android:layout_marginStart="20dp"
+                    android:text="@string/recent_view"
+                    android:textSize="20sp"
+                    android:textAlignment="viewStart"
+                    android:layout_alignParentStart="true"/>
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="100dp"
                     android:layout_height="match_parent"
+                    android:layout_alignParentEnd="true"
                     android:layout_marginEnd="20dp"
-                    android:text="@string/your_books" />
+                    android:text="@string/all"
+                    android:textSize="20sp"
+                    android:textAlignment="viewEnd"
+                    android:textColor="@color/primary" />
 
-            </LinearLayout>
+            </RelativeLayout>
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recyclerViewBookListAccessVideo"
@@ -175,7 +207,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/linearLayout5"
-                tools:listitem="@layout/book_card_view" />
+                tools:listitem="@layout/viewed_video_items_" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

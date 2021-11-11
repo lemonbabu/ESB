@@ -1,13 +1,12 @@
 package com.texon.engineeringsmartbook.Model;
 
 public class BookModel {
-    private String title, genre, year;
+    private String title,  price;
     public BookModel() {
     }
-    public BookModel(String title, String genre, String year) {
+    public BookModel(String title, String price) {
         this.title = title;
-        this.genre = genre;
-        this.year = year;
+        this.price = price;
     }
     public String getTitle() {
         return title;
@@ -15,16 +14,10 @@ public class BookModel {
     public void setTitle(String name) {
         this.title = name;
     }
-    public String getYear() {
-        return year;
+    public String getPrice() {
+        return price;
     }
-    public void setYear(String year) {
-        this.year = year;
-    }
-    public String getGenre() {
-        return genre;
-    }
-    public void setGenre(String genre) {
-        this.genre = genre;
+    public void setPrice(String price) {
+        this.price = price;
     }
 }
