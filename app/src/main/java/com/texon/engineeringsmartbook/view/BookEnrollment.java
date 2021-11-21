@@ -8,7 +8,6 @@ import android.widget.ImageButton;
 
 import com.texon.engineeringsmartbook.R;
 import com.texon.engineeringsmartbook.view.ui.auth.Login;
-import com.texon.engineeringsmartbook.view.ui.auth.UserProfile;
 
 public class BookEnrollment extends AppCompatActivity {
 
@@ -42,9 +41,9 @@ public class BookEnrollment extends AppCompatActivity {
         });
 
         btnProfileMenu.setOnClickListener(v -> {
-            Intent intent = new Intent(getApplicationContext(), UserProfile.class);
-            startActivity(intent);
-            finish();
+//            Intent intent = new Intent(getApplicationContext(), UserProfile.class);
+//            startActivity(intent);
+//            finish();
         });
     }
 

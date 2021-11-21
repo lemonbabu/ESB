@@ -2,6 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.texon.engineeringsmartbook">
 
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@drawable/logo_esb"
@@ -10,6 +14,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.EngineeringSmartBook">
         <activity
+            android:name=".VideoPlayer"
+            android:exported="false" />
+        <activity
+            android:name=".Scanner"
+            android:exported="false" />
+        <activity
+            android:name=".view.MainActivity"
+            android:exported="false" />
+        <activity
             android:name=".PaymentMethod"
             android:exported="false" />
         <activity
@@ -17,9 +30,6 @@
             android:exported="false" />
         <activity
             android:name=".BookDetails"
-            android:exported="false" />
-        <activity
-            android:name=".view.ui.auth.UserProfile"
             android:exported="false" />
         <activity
             android:name=".view.BookEnrollment"
@@ -44,10 +54,16 @@
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
     </application>
 
+    <queries>
+        <intent>
+            <action android:name="com.google.android.youtube.api.service.START" />
+        </intent>
+    </queries>
+
 </manifest>
+

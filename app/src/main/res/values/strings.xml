@@ -68,4 +68,8 @@
     <string name="pay_later">পেমেন্ট পরে করবেন</string>
     <string name="payment_methods_we_are_accept">Payment methods we are accept</string>
     <string name="personal_number">Personal Number</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="scan_button">Scan button</string>
+    <string name="todo">TODO</string>
 </resources>

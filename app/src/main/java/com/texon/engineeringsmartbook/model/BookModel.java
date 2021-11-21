@@ -1,4 +1,4 @@
-package com.texon.engineeringsmartbook.Model;
+package com.texon.engineeringsmartbook.model;
 
 public class BookModel {
     private String title,  price;

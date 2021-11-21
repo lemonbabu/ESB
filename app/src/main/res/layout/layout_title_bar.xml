@@ -9,12 +9,14 @@
         android:id="@+id/titleBarHeading"
         android:visibility="invisible"
         android:layout_width="300dp"
+        android:layout_marginTop="20dp"
         android:layout_height="match_parent">
 
         <ImageView
             android:layout_width="50dp"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="5dp"
             android:src="@drawable/logo_esb"
             android:contentDescription="@string/app_bar_home_button" />
 
@@ -27,11 +29,10 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
                 android:text="@string/engineering"
                 android:textColor="@color/primary"
                 android:textStyle="bold"
-                android:textSize="@dimen/text25"
+                android:textSize="22sp"
                 tools:ignore="RelativeOverlap" />
 
             <TextView
@@ -40,7 +41,7 @@
                 android:layout_marginStart="2dp"
                 android:text="@string/smart_book"
                 android:textStyle="bold"
-                android:textSize="@dimen/text15"/>
+                android:textSize="14sp"/>
         </LinearLayout>
 
     </LinearLayout>
@@ -53,19 +54,25 @@
         android:layout_marginStart="30dp"
         android:layout_marginTop="25dp"
         android:background="@color/white"
-        android:contentDescription="@string/app_bar_home_button"
-        android:src="@drawable/ic_arrow_round_back" />
+        android:contentDescription="@string/app_name"
+        android:minWidth="48dp"
+        android:minHeight="48dp"
+        android:src="@drawable/ic_arrow_round_back"
+        tools:ignore="DuplicateSpeakableTextCheck,TouchTargetSizeCheck" />
 
     <ImageButton
         android:id="@+id/btnNotificationsMenu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
-        android:layout_marginEnd="30dp"
         android:layout_marginTop="25dp"
+        android:layout_marginEnd="30dp"
         android:background="@color/white"
-        android:contentDescription="@string/app_bar_home_button"
-        android:src="@drawable/ic_notifications" />
+        android:contentDescription="@string/app_name"
+        android:minWidth="48dp"
+        android:minHeight="48dp"
+        android:src="@drawable/ic_notifications"
+        tools:ignore="TouchTargetSizeCheck" />
 
 
 </RelativeLayout>

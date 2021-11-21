@@ -1,4 +1,4 @@
-package com.texon.engineeringsmartbook.Model;
+package com.texon.engineeringsmartbook.model;
 
 import android.view.LayoutInflater;
 import android.view.View;

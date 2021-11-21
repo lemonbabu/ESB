@@ -10,7 +10,7 @@
 
     <include
         android:id="@+id/titleBar"
-        layout="@layout/title_bar"
+        layout="@layout/layout_title_bar"
         android:layout_width="wrap_content"
         android:layout_height="69dp"
         android:layout_marginTop="20dp"
@@ -106,7 +106,7 @@
 
     <include
         android:id="@+id/appBar"
-        layout="@layout/app_bar"
+        layout="@layout/layout_app_bar"
         android:layout_width="match_parent"
         android:layout_height="93dp"
         app:layout_constraintBottom_toBottomOf="parent" />

@@ -12,9 +12,8 @@ import android.view.View;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 
-import com.texon.engineeringsmartbook.Model.BookAdapter;
-import com.texon.engineeringsmartbook.Model.BookModel;
-import com.texon.engineeringsmartbook.view.ui.auth.UserProfile;
+import com.texon.engineeringsmartbook.model.BookAdapter;
+import com.texon.engineeringsmartbook.model.BookModel;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -41,7 +40,7 @@ public class Dashboard extends AppCompatActivity {
         btnScan = findViewById(R.id.btnScannerMenu);
 
         btnProfile.setOnClickListener(v -> {
-            Intent intent = new Intent(getApplicationContext(), UserProfile.class);
+            Intent intent = new Intent(getApplicationContext(), Dashboard.class);
             startActivity(intent);
             finish();
         });

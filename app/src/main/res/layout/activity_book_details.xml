@@ -9,17 +9,19 @@
 
     <RelativeLayout
         android:id="@+id/header"
+        android:visibility="invisible"
         android:layout_width="fill_parent"
         android:layout_height="69dp"
         android:layout_marginTop="20dp"
         android:layout_alignParentTop="true">
 
         <include
-            layout="@layout/title_bar"/>
+            layout="@layout/layout_title_bar"/>
 
     </RelativeLayout>
 
     <ScrollView
+        android:visibility="invisible"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:layout_above="@+id/footer"
@@ -320,6 +322,7 @@
     </ScrollView>
 
     <RelativeLayout
+        android:visibility="invisible"
         android:id="@+id/footer"
         android:layout_width="fill_parent"
         android:layout_height="50dp"
@@ -349,5 +352,9 @@
             android:layout_alignParentEnd="true"/>
 
     </RelativeLayout>
+
+    <include
+        android:id="@+id/youTubePlayer"
+        layout="@layout/video_player"/>
 
 </RelativeLayout>
