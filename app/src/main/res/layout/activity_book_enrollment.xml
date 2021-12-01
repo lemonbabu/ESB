@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:screenOrientation="portrait"
-    tools:context=".view.BookEnrollment">
+    tools:context=".ui.main.view.BookEnrollment">
 
     <include
         android:id="@+id/titleBar"

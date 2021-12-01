@@ -8,24 +8,31 @@
     android:layout_above="@+id/footer"
     android:layout_below="@+id/header"
     android:fillViewport="true"
-    tools:context=".view.fragment.DashboardFragment">
+    tools:context=".ui.main.view.fragment.DashboardFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <ImageView
-            android:id="@+id/imageView"
+        <com.smarteist.autoimageslider.SliderView
+            android:id="@+id/imageSlider"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:layout_marginStart="10dp"
-            android:layout_marginEnd="9dp"
-            android:contentDescription="@string/logo_esb"
-            android:src="@drawable/img_demo_slider"
+            android:layout_height="200dp"
+            android:layout_margin="20dp"
+            app:sliderAnimationDuration="600"
+            app:sliderAutoCycleDirection="back_and_forth"
+            app:sliderAutoCycleEnabled="true"
+            app:sliderIndicatorAnimationDuration="600"
+            app:sliderIndicatorGravity="center_horizontal|bottom"
+            app:sliderIndicatorOrientation="horizontal"
+            app:sliderIndicatorSelectedColor="#5A5A5A"
+            app:sliderIndicatorUnselectedColor="#FFF"
+            app:sliderScrollTimeInSec="1"
+            app:sliderStartAutoCycle="true"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
 
         <LinearLayout
             android:id="@+id/linearLayout2"
@@ -36,17 +43,18 @@
             android:orientation="horizontal"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView">
+            app:layout_constraintTop_toBottomOf="@+id/imageSlider">
 
             <TextView
                 android:layout_width="100dp"
                 android:layout_height="100dp"
-                android:text="@string/your_books"
-                android:layout_marginEnd="20dp"
                 android:layout_marginTop="5dp"
+                android:layout_marginEnd="20dp"
                 android:drawablePadding="-10dp"
+                android:text="@string/your_books"
                 android:textAlignment="center"
-                app:drawableTopCompat="@drawable/ic_books_button" />
+                app:drawableTopCompat="@drawable/ic_books_button"
+                tools:ignore="TextContrastCheck" />
 
             <TextView
                 android:layout_width="100dp"
@@ -61,7 +69,7 @@
             <TextView
                 android:layout_width="100dp"
                 android:layout_height="100dp"
-                android:text="@string/your_books"
+                android:text="@string/help"
                 android:drawablePadding="-5dp"
                 android:textAlignment="center"
                 app:drawableTopCompat="@drawable/ic_help" />
@@ -78,6 +86,7 @@
             app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
 
             <TextView
+                android:id="@+id/btnYourBooks"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_marginEnd="20dp"
@@ -87,30 +96,29 @@
                 android:textColor="@color/primary" />
 
             <TextView
+                android:id="@+id/btnFreeVideo"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_marginEnd="20dp"
                 android:text="@string/free_video"
                 android:textSize="20sp"/>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_marginEnd="20dp"
-                android:text="@string/promo"
-                android:textSize="20sp"/>
 
         </LinearLayout>
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerViewBookList"
+            android:id="@+id/rvYourBooks"
             android:layout_width="match_parent"
             android:layout_height="220dp"
             android:layout_margin="10dp"
+            android:scrollbars="horizontal"
+            android:orientation="horizontal"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/linearLayout3"
-            tools:listitem="@layout/card_book__view" />
+            tools:listitem="@layout/card_book_view"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"/>
 
         <RelativeLayout
             android:id="@+id/linearLayout4"
@@ -120,38 +128,32 @@
             android:layout_marginBottom="10dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/recyclerViewBookList">
+            app:layout_constraintTop_toBottomOf="@+id/rvYourBooks">
 
-            <TextView
-                android:layout_width="200dp"
-                android:layout_height="match_parent"
-                android:layout_marginStart="20dp"
-                android:text="@string/your_access_books"
-                android:textSize="20sp"
-                android:textAlignment="viewStart"
-                android:layout_alignParentStart="true"/>
 
             <TextView
                 android:layout_width="100dp"
                 android:layout_height="match_parent"
-                android:layout_alignParentEnd="true"
-                android:layout_marginEnd="20dp"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="20dp"
                 android:text="@string/store"
-                android:textSize="20sp"
-                android:textAlignment="viewEnd"
-                android:textColor="@color/primary" />
+                android:textAlignment="viewStart"
+                android:textColor="@color/primary"
+                android:textSize="20sp" />
 
         </RelativeLayout>
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerViewBookListAccess"
+            android:id="@+id/recyclerViewBookListStore"
             android:layout_width="match_parent"
             android:layout_height="220dp"
             android:layout_margin="10dp"
+            android:layout_marginTop="8dp"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/linearLayout4"
-            tools:listitem="@layout/card_book__view" />
+            tools:listitem="@layout/card_book_view" />
 
         <RelativeLayout
             android:id="@+id/linearLayout5"
@@ -161,7 +163,7 @@
             android:layout_marginBottom="10dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/recyclerViewBookListAccess">
+            app:layout_constraintTop_toBottomOf="@+id/recyclerViewBookListStore">
 
             <TextView
                 android:layout_width="200dp"
@@ -194,6 +196,16 @@
             app:layout_constraintTop_toBottomOf="@+id/linearLayout5"
             tools:listitem="@layout/viewed_video_items_" />
 
+        <include
+            android:visibility="gone"
+            android:id="@+id/loader"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            layout="@layout/layout_loader"
+            app:layout_constraintBottom_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

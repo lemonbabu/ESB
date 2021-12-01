@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/primary"
     android:screenOrientation="portrait"
-    tools:context=".view.SplashScreen">
+    tools:context=".ui.main.view.activities.SplashScreen">
 
     <ImageView
         android:id="@+id/image_title"
@@ -111,6 +111,10 @@
         </LinearLayout>
 
         </LinearLayout>
+
+    <include
+        android:id="@+id/loader"
+        layout="@layout/layout_splash_screen"/>
 
 
 </RelativeLayout>

@@ -23,7 +23,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
-            android:id="@+id/editText2"
+            android:id="@+id/txtCusName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
@@ -38,7 +38,7 @@
             app:layout_constraintTop_toBottomOf="@+id/textView"/>
 
         <EditText
-            android:id="@+id/editText"
+            android:id="@+id/txtCusPhone"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
@@ -50,7 +50,7 @@
             android:paddingEnd="20dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editText2"/>
+            app:layout_constraintTop_toBottomOf="@+id/txtCusName"/>
 
         <RelativeLayout
             android:id="@+id/relativeLayout"
@@ -60,42 +60,47 @@
             android:orientation="horizontal"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editText">
+            app:layout_constraintTop_toBottomOf="@+id/txtCusPhone">
 
             <EditText
+                android:id="@+id/txtCity"
                 android:layout_width="180dp"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
                 android:layout_marginEnd="10dp"
                 android:background="@drawable/bg_button_shave_white_round"
-                android:hint="@string/shipping_address"
+                android:hint="@string/city"
                 android:importantForAutofill="no"
-                android:inputType="textPostalAddress"
+                android:inputType="text"
                 android:paddingStart="20dp"
                 android:paddingEnd="20dp" />
 
             <EditText
+                android:id="@+id/txtDistrict"
                 android:layout_width="180dp"
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
                 android:background="@drawable/bg_button_shave_white_round"
-                android:hint="@string/shipping_address"
+                android:hint="@string/district"
                 android:importantForAutofill="no"
-                android:inputType="number"
+                android:inputType="text"
                 android:paddingStart="20dp"
                 android:paddingEnd="20dp" />
 
         </RelativeLayout>
 
         <EditText
-            android:id="@+id/editText3"
+            android:id="@+id/txtAddress"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="150dp"
+            android:maxLines="4"
             android:layout_marginTop="10dp"
             android:background="@drawable/bg_button_shave_white_round"
             android:hint="@string/shipping_address"
             android:importantForAutofill="no"
-            android:inputType="number"
+            android:inputType="text"
+            android:gravity="start|top"
+            android:paddingTop="10dp"
             android:paddingStart="20dp"
             android:paddingEnd="20dp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -103,12 +108,13 @@
             app:layout_constraintTop_toBottomOf="@id/relativeLayout" />
 
         <Button
-            android:id="@+id/btnApply"
+            android:id="@+id/btnConfirmOrder"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="40dp"
             android:layout_marginTop="20dp"
             android:layout_marginEnd="40dp"
+            android:layout_marginBottom="60dp"
             android:background="@drawable/bg_button_shape_corner_round"
             android:text="@string/confirm_order"
             android:textAllCaps="false"
@@ -117,8 +123,7 @@
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/editText3" />
-
+            app:layout_constraintTop_toBottomOf="@id/txtAddress" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>

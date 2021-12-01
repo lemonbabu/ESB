@@ -16,7 +16,12 @@
         <item name="windowNoTitle">true</item>
     </style>
 
-    <style name="Custom.Widget.SwitchCompat" parent="Widget.AppCompat.CompoundButton.Switch" >
-        <item name="android:textColorPrimary">@color/primary</item>  <!--textColor on activated state -->
+    <style name="Custom.Widget.SwitchCompat" parent="Widget.AppCompat.CompoundButton.Switch">
+        <item name="android:textColorPrimary">@color/primary
+        </item>  <!--textColor on activated state -->
     </style>
+
+    <style name="Theme.EngineeringSmartBook.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="Theme.EngineeringSmartBook.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 </resources>

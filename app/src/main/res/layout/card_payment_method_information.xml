@@ -8,7 +8,10 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:layout_margin="20dp">
+        android:layout_marginBottom="50dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp">
 
         <TextView
             android:id="@+id/textView"
@@ -26,33 +29,37 @@
             android:id="@+id/relativeLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="20dp"
             android:orientation="horizontal"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView">
 
             <EditText
+                android:id="@+id/txtTnxId"
                 android:layout_width="180dp"
                 android:layout_height="50dp"
                 android:layout_alignParentStart="true"
                 android:layout_marginEnd="10dp"
-                android:hint="@string/shipping_address"
                 android:background="@drawable/bg_rectangle_ash"
+                android:hint="@string/transaction_id"
                 android:importantForAutofill="no"
                 android:inputType="textPostalAddress"
                 android:paddingStart="20dp"
                 android:paddingEnd="20dp" />
 
             <ImageButton
+                android:id="@+id/btnMakePayment"
                 android:layout_width="70dp"
                 android:layout_height="50dp"
                 android:layout_alignParentStart="true"
                 android:layout_marginStart="180dp"
                 android:background="@color/primary"
-                android:src="@drawable/ic_arrow_forward"
-                android:contentDescription="@string/your_name" />
+                android:contentDescription="@string/your_name"
+                android:src="@drawable/ic_arrow_forward" />
+
             <TextView
+                android:id="@+id/txtPayLater"
                 android:layout_width="100dp"
                 android:layout_height="50dp"
                 android:text="@string/pay_later"
@@ -102,6 +109,7 @@
             android:text="@string/sample_phone_number"
             android:autoLink="phone"
             android:textAlignment="center"
+            android:textIsSelectable="true"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/textType"/>
@@ -110,6 +118,7 @@
             android:id="@+id/payPhone2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textIsSelectable="true"
             android:text="@string/sample_phone_number"
             android:autoLink="phone"
             android:textAlignment="center"
@@ -144,6 +153,7 @@
             android:layout_height="wrap_content"
             android:text="@string/sample_phone_number"
             android:autoLink="phone"
+            android:textIsSelectable="true"
             android:textAlignment="center"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -155,6 +165,7 @@
             android:layout_height="wrap_content"
             android:text="@string/sample_phone_number"
             android:autoLink="phone"
+            android:textIsSelectable="true"
             android:textAlignment="center"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -187,6 +198,7 @@
             android:layout_height="wrap_content"
             android:text="@string/sample_phone_number"
             android:autoLink="phone"
+            android:textIsSelectable="true"
             android:textAlignment="center"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -198,11 +210,11 @@
             android:layout_height="wrap_content"
             android:text="@string/sample_phone_number"
             android:autoLink="phone"
+            android:textIsSelectable="true"
             android:textAlignment="center"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/payPhone5"/>
-
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

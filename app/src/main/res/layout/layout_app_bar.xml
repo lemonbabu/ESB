@@ -24,18 +24,17 @@
             android:src="@drawable/ic_home_primary_color"
             tools:ignore="TouchTargetSizeCheck,DuplicateSpeakableTextCheck,RedundantDescriptionCheck" />
 
-        <ImageButton
+
+        <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/btnProfileMenu"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="3dp"
+            android:padding="7dp"
             android:layout_alignParentEnd="true"
             android:layout_marginEnd="40dp"
             android:background="@null"
-            android:contentDescription="@string/_40_hours"
-            android:minWidth="48dp"
-            android:minHeight="48dp"
-            android:src="@drawable/ic_user_profile"
-            tools:ignore="TouchTargetSizeCheck" />
+            android:src="@drawable/img_demo_user" />
 
     </RelativeLayout>
 

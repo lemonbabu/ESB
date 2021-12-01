@@ -7,14 +7,14 @@
     android:layout_height="match_parent"
     android:background="@color/primary"
     android:screenOrientation="portrait"
-    tools:context=".view.fragment.ProfileFragment">
+    tools:context=".ui.main.view.fragment.ProfileFragment">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="120dp"
         android:background="@drawable/bg_rectangle_light_round"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -26,11 +26,11 @@
             android:id="@+id/txtUserName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="65dp"
+            android:layout_marginTop="70dp"
             android:text="@string/demo_user"
             android:textAlignment="center"
             android:textColor="@color/black"
-            android:textSize="@dimen/text15"
+            android:textSize="@dimen/text20"
             android:textStyle="bold" />
 
         <TextView
@@ -45,46 +45,46 @@
             android:textSize="@dimen/text15"
             android:textStyle="bold" />
 
-        <RelativeLayout
-            android:id="@+id/pnlInfo"
-            android:layout_width="match_parent"
+        <TextView
+            android:id="@+id/txtUserEmail"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/txtUserPhone"
+            android:layout_centerInParent="true"
             android:layout_marginTop="50dp"
-            android:gravity="center"
-            android:orientation="horizontal">
+            android:drawablePadding="15dp"
+            android:text="@string/sample_email_address"
+            android:textSize="@dimen/text15"
+            app:drawableStartCompat="@drawable/ic_material_mail" />
 
-            <ImageView
-                android:id="@+id/imgEmail"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="10dp"
-                android:contentDescription="@string/sample_email_address"
-                android:src="@drawable/ic_material_mail" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_toEndOf="@+id/imgEmail"
-                android:text="@string/sample_email_address"
-                android:textSize="@dimen/text15" />
-
-        </RelativeLayout>
+        <TextView
+            android:id="@+id/txtChangePassword"
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:layout_below="@+id/txtUserEmail"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="20dp"
+            android:paddingTop="5dp"
+            android:drawablePadding="15dp"
+            android:text="@string/change_password"
+            android:textSize="@dimen/text15"
+            app:drawableStartCompat="@drawable/ic_material_lock" />
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="20dp"
-            android:layout_marginTop="100dp"
+            android:layout_marginTop="120dp"
             android:layout_marginStart="20dp"
             android:layout_marginEnd="20dp"
-            android:layout_below="@+id/pnlInfo"
+            android:layout_below="@+id/txtUserEmail"
             android:orientation="horizontal">
 
             <Button
                 android:id="@+id/btnLogOut"
                 android:layout_width="160dp"
-                android:layout_height="wrap_content"
+                android:layout_height="48dp"
                 android:layout_marginEnd="20dp"
                 android:background="@drawable/bg_button_shape_corner_round"
                 android:drawableStart="@drawable/ic_logout"
@@ -100,7 +100,7 @@
             <Button
                 android:id="@+id/btnEditProfile"
                 android:layout_width="160dp"
-                android:layout_height="50dp"
+                android:layout_height="48dp"
                 android:layout_toEndOf="@+id/btnLogOut"
                 android:background="@drawable/bg_white_round"
                 android:text="@string/edit_profile"

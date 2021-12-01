@@ -5,26 +5,24 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".BookDetails">
+    tools:context=".ui.main.view.activities.BookDetails">
 
     <RelativeLayout
         android:id="@+id/header"
-        android:visibility="invisible"
         android:layout_width="fill_parent"
         android:layout_height="69dp"
         android:layout_marginTop="20dp"
         android:layout_alignParentTop="true">
 
         <include
-            layout="@layout/layout_title_bar"/>
+            android:id="@+id/layoutHeader"
+            layout="@layout/layout_title_bar" />
 
     </RelativeLayout>
 
     <ScrollView
-        android:visibility="invisible"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:layout_above="@+id/footer"
         android:layout_below="@+id/header"
         android:fillViewport="true" >
 
@@ -33,12 +31,12 @@
             android:layout_height="wrap_content">
 
             <ImageView
-                android:id="@+id/imgBooks"
+                android:id="@+id/imgBooksCover"
                 android:layout_width="match_parent"
-                android:layout_height="300dp"
-                android:layout_margin="10dp"
-                android:layout_marginStart="10dp"
-                android:layout_marginEnd="9dp"
+                android:layout_height="270dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
                 android:contentDescription="@string/logo_esb"
                 android:src="@drawable/img_book_cover"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -52,10 +50,12 @@
                 android:layout_marginTop="20dp"
                 android:layout_marginStart="20dp"
                 android:text="@string/your_books"
-                android:textSize="30sp"
+                android:textSize="25sp"
+                android:maxLines="1"
+                android:ellipsize="end"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/imgBooks"/>
+                app:layout_constraintTop_toBottomOf="@+id/imgBooksCover"/>
 
 
             <RelativeLayout
@@ -69,26 +69,40 @@
                 app:layout_constraintTop_toBottomOf="@+id/txtBookTitle">
 
                 <TextView
-                    android:layout_width="150dp"
+                    android:layout_width="15dp"
                     android:layout_height="40dp"
                     android:layout_alignParentStart="true"
                     android:layout_marginTop="10dp"
                     android:layout_marginEnd="20dp"
+                    android:text="@string/taka"
+                    android:textColor="@color/primary"
+                    android:textSize="@dimen/text20"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/txtBookPrice"
+                    android:layout_width="150dp"
+                    android:layout_height="40dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginStart="17dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="20dp"
                     android:text="@string/_460"
                     android:textColor="@color/primary"
-                    android:textSize="@dimen/text25"
+                    android:textSize="@dimen/text20"
                     android:textStyle="bold" />
 
 
                 <Button
-                    android:layout_width="130dp"
-                    android:layout_height="50dp"
-                    android:text="@string/_40"
-                    android:textStyle="bold"
-                    android:textColor="@color/white"
-                    android:textSize="@dimen/text25"
+                    android:id="@+id/txtBookDiscount"
+                    android:layout_width="120dp"
+                    android:layout_height="48dp"
                     android:layout_alignParentEnd="true"
-                    android:background="@drawable/bg_button_shape_corner_round"/>
+                    android:background="@drawable/bg_button_shape_corner_round"
+                    android:text="@string/_4"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text20"
+                    android:textStyle="bold" />
 
             </RelativeLayout>
 
@@ -96,7 +110,7 @@
             <LinearLayout
                 android:id="@+id/linearLayout2"
                 android:layout_width="match_parent"
-                android:layout_height="60dp"
+                android:layout_height="50dp"
                 android:layout_margin="20dp"
                 android:orientation="horizontal"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -104,40 +118,40 @@
                 app:layout_constraintTop_toBottomOf="@+id/linearLayout0">
 
                 <ImageView
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
                     android:layout_marginEnd="10dp"
+                    android:contentDescription="@string/your_books"
                     android:src="@drawable/ic_user_image"
-                    android:contentDescription="@string/your_books" />
+                    tools:ignore="ImageContrastCheck,ImageContrastCheck,ImageContrastCheck" />
 
-                <LinearLayout
+                <TextView
                     android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical">
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="20dp"
+                    android:layout_gravity="center_vertical"
+                    android:textSize="@dimen/text18"
+                    android:text="@string/no_of_sold"/>
 
-                    <TextView
-                        android:layout_width="120dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginEnd="10dp"
-                        android:textSize="@dimen/text20"
-                        android:text="@string/no_of_sold"/>
+                <TextView
+                    android:id="@+id/txtBookSold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginEnd="10dp"
+                    android:textSize="@dimen/text18"
+                    android:textColor="@color/black"
+                    android:text="@string/_40"/>
 
-                    <TextView
-                        android:layout_width="120dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginEnd="10dp"
-                        android:textSize="@dimen/text20"
-                        android:textAlignment="center"
-                        android:text="@string/_40"/>
-                </LinearLayout>
-
+                <!--
                 <ImageView
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
                     android:layout_marginEnd="10dp"
                     android:src="@drawable/ic_time_watch"
                     android:contentDescription="@string/your_books" />
 
+
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
@@ -147,201 +161,115 @@
                         android:layout_width="120dp"
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="10dp"
-                        android:textSize="@dimen/text20"
+                        android:textSize="@dimen/text18"
                         android:text="@string/total_time"/>
 
                     <TextView
-                        android:layout_width="120dp"
+                        android:id="@+id/txtBookDuration"
+                        android:layout_width="100dp"
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="10dp"
-                        android:textSize="@dimen/text20"
+                        android:textSize="@dimen/text18"
                         android:textAlignment="center"
                         android:text="@string/_40"/>
                 </LinearLayout>
+                -->
 
             </LinearLayout>
 
             <RelativeLayout
                 android:id="@+id/linearLayout3"
                 android:layout_width="match_parent"
-                android:layout_height="30dp"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
 
                 <TextView
-                    android:layout_width="200dp"
+                    android:id="@+id/bookDescriptionTitle"
+                    android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_alignParentStart="true"
                     android:layout_marginStart="20dp"
-                    android:text="@string/your_access_books"
+                    android:text="@string/book_description"
                     android:textAlignment="viewStart"
                     android:textSize="20sp" />
 
                 <TextView
-                    android:layout_width="100dp"
-                    android:layout_height="match_parent"
-                    android:layout_alignParentEnd="true"
+                    android:id="@+id/txtBookDescription"
+                    android:layout_below="@+id/bookDescriptionTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
                     android:layout_marginEnd="20dp"
                     android:text="@string/store"
-                    android:textSize="20sp"
-                    android:textAlignment="viewEnd"
-                    android:textColor="@color/primary" />
+                    android:textSize="15sp"
+                    android:textAlignment="viewStart" />
 
             </RelativeLayout>
 
-            <LinearLayout
+
+            <RelativeLayout
                 android:id="@+id/linearLayout4"
                 android:layout_width="match_parent"
-                android:layout_height="30dp"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/linearLayout3">
 
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_marginEnd="20dp"
-                    android:layout_marginStart="10dp"
-                    android:text="@string/your_books"
-                    android:textSize="20sp"
-                    android:textColor="@color/primary" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_marginEnd="20dp"
-                    android:text="@string/free_video"
-                    android:textSize="20sp"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_marginEnd="20dp"
-                    android:text="@string/promo"
-                    android:textSize="20sp"/>
-
-            </LinearLayout>
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recyclerViewBookList"
-                android:layout_width="match_parent"
-                android:layout_height="220dp"
-                android:layout_margin="10dp"
-                android:layout_marginTop="20dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/linearLayout4"
-                tools:listitem="@layout/card_book__view" />
-
-            <RelativeLayout
-                android:id="@+id/linearLayout5"
-                android:layout_width="match_parent"
-                android:layout_height="30dp"
-                android:layout_marginTop="20dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/recyclerViewBookList">
-
-                <TextView
-                    android:layout_width="200dp"
+                    android:id="@+id/contentTitle"
+                    android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_alignParentStart="true"
                     android:layout_marginStart="20dp"
-                    android:text="@string/your_access_books"
+                    android:text="@string/book_description"
                     android:textAlignment="viewStart"
                     android:textSize="20sp" />
 
-                <TextView
-                    android:layout_width="100dp"
-                    android:layout_height="match_parent"
-                    android:layout_alignParentEnd="true"
-                    android:layout_marginEnd="20dp"
-                    android:text="@string/store"
-                    android:textSize="20sp"
-                    android:textAlignment="viewEnd"
-                    android:textColor="@color/primary" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvContent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/contentTitle"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginBottom="10dp"
+                    tools:listitem="@layout/layout_content_item" />
 
             </RelativeLayout>
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recyclerViewBookListAccess"
-                android:layout_width="match_parent"
-                android:layout_height="220dp"
-                android:layout_margin="20dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/linearLayout5"
-                tools:listitem="@layout/card_book__view" />
-
-            <RelativeLayout
-                android:id="@+id/linearLayout6"
-                android:layout_width="match_parent"
-                android:layout_height="30dp"
-                android:layout_marginTop="20dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/recyclerViewBookListAccess">
-
-                <TextView
-                    android:layout_width="200dp"
-                    android:layout_height="match_parent"
-                    android:layout_marginStart="20dp"
-                    android:text="@string/recent_view"
-                    android:textSize="20sp"
-                    android:textAlignment="viewStart"
-                    android:layout_alignParentStart="true"/>
-
-                <TextView
-                    android:layout_width="100dp"
-                    android:layout_height="match_parent"
-                    android:layout_alignParentEnd="true"
-                    android:layout_marginEnd="20dp"
-                    android:text="@string/all"
-                    android:textSize="20sp"
-                    android:textAlignment="viewEnd"
-                    android:textColor="@color/primary" />
-
-            </RelativeLayout>
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recyclerViewBookListAccessVideo"
-                android:layout_width="match_parent"
-                android:layout_height="500dp"
-                android:layout_margin="10dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/linearLayout6"
-                tools:listitem="@layout/viewed_video_items_" />
-
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </ScrollView>
 
     <RelativeLayout
-        android:visibility="invisible"
         android:id="@+id/footer"
         android:layout_width="fill_parent"
         android:layout_height="50dp"
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
+        android:background="@null"
         android:layout_marginBottom="10dp"
         android:layout_alignParentBottom="true">
 
         <Button
+            android:id="@+id/btnOrderNow"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:text="@string/order_now"
             android:textSize="@dimen/text20"
             android:textStyle="bold"
             android:textColor="@color/primary"
-            android:background="@drawable/bg_button_shave_white_round"
+            android:background="@drawable/bg_white_round"
             android:layout_alignParentStart="true"/>
 
         <Button
+            android:id="@+id/btnGetAccess"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:text="@string/get_access"
@@ -354,7 +282,9 @@
     </RelativeLayout>
 
     <include
-        android:id="@+id/youTubePlayer"
-        layout="@layout/video_player"/>
+        android:visibility="gone"
+        android:id="@+id/loader"
+        layout="@layout/layout_loader"/>
+
 
 </RelativeLayout>

@@ -6,64 +6,66 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
 
-    <application
-        android:allowBackup="true"
-        android:icon="@drawable/logo_esb"
-        android:label="@string/app_short_name"
-        android:roundIcon="@drawable/logo_esb"
-        android:supportsRtl="true"
-        android:theme="@style/Theme.EngineeringSmartBook">
-        <activity
-            android:name=".VideoPlayer"
-            android:exported="false" />
-        <activity
-            android:name=".Scanner"
-            android:exported="false" />
-        <activity
-            android:name=".view.MainActivity"
-            android:exported="false" />
-        <activity
-            android:name=".PaymentMethod"
-            android:exported="false" />
-        <activity
-            android:name=".AddressConfirmation"
-            android:exported="false" />
-        <activity
-            android:name=".BookDetails"
-            android:exported="false" />
-        <activity
-            android:name=".view.BookEnrollment"
-            android:exported="false" />
-        <activity
-            android:name=".view.SuccessfullyEnrolled"
-            android:exported="false" />
-        <activity
-            android:name=".view.ui.auth.OtpVerify"
-            android:exported="false" />
-        <activity
-            android:name=".view.ui.auth.SignUp"
-            android:exported="false" />
-        <activity
-            android:name=".view.ui.auth.Login"
-            android:exported="false" />
-        <activity
-            android:name=".Dashboard"
-            android:exported="false" />
-        <activity
-            android:name=".view.SplashScreen"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-    </application>
-
     <queries>
         <intent>
             <action android:name="com.google.android.youtube.api.service.START" />
         </intent>
     </queries>
 
-</manifest>
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/logo_esb"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/logo_esb"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.EngineeringSmartBook">
+        <activity
+            android:name=".ui.main.view.auth.ChangePassword"
+            android:exported="false" />
+        <activity
+            android:name=".ChangePassword"
+            android:exported="false"
+            android:label="@string/title_activity_change_password"
+            android:theme="@style/Theme.EngineeringSmartBook.NoActionBar" />
+        <activity
+            android:name=".ui.main.view.activities.VideoPlayer"
+            android:exported="false" />
+        <activity
+            android:name=".ui.main.view.activities.Scanner"
+            android:exported="false" />
+        <activity
+            android:name=".ui.main.view.MainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.main.view.activities.BookDetails"
+            android:exported="false" />
+        <activity
+            android:name=".ui.main.view.BookEnrollment"
+            android:exported="false" />
+        <activity
+            android:name=".ui.main.view.SuccessfullyEnrolled"
+            android:exported="false" />
+        <activity
+            android:name=".ui.main.view.auth.OtpVerify"
+            android:exported="false" />
+        <activity
+            android:name=".ui.main.view.auth.SignUp"
+            android:exported="false" />
+        <activity
+            android:name=".ui.main.view.auth.Login"
+            android:exported="false" />
+        <activity
+            android:name=".ui.main.view.auth.ForgotPassword"
+            android:exported="false" />
+        <activity
+            android:name=".ui.main.view.activities.SplashScreen"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
