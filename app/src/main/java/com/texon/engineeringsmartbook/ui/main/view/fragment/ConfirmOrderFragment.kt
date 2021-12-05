@@ -8,7 +8,6 @@ import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.View
 import android.widget.Toast
-import com.beust.klaxon.JsonObject
 import com.google.gson.Gson
 import com.squareup.picasso.Picasso
 import com.texon.engineeringsmartbook.R
@@ -33,7 +32,7 @@ class ConfirmOrderFragment : Fragment(R.layout.fragment_confirm_order) {
     private var token = ""
     private var txId = ""
     private var actNo = ""
-    private lateinit var address : Gson
+    private lateinit var address : String
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -80,7 +79,7 @@ class ConfirmOrderFragment : Fragment(R.layout.fragment_confirm_order) {
                 return@setOnClickListener
             }
 
-            address = Gson()
+            address = "{\"name\": $name \"phone\": $phn \"district\": $dis \"city\": $city \"address\": $ads}"
             binding.addressInfo.btnConfirmOrder.isClickable = false
             orderBook()
 

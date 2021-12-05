@@ -2,6 +2,7 @@
 <androidx.cardview.widget.CardView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
@@ -20,9 +21,11 @@
             android:text="@string/payment_info"
             android:textColor="@color/primary"
             android:textSize="@dimen/text15"
+            android:textAlignment="center"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="TextContrastCheck" />
 
 
         <RelativeLayout
@@ -46,7 +49,8 @@
                 android:importantForAutofill="no"
                 android:inputType="textPostalAddress"
                 android:paddingStart="20dp"
-                android:paddingEnd="20dp" />
+                android:paddingEnd="20dp"
+                tools:ignore="TextContrastCheck" />
 
             <ImageButton
                 android:id="@+id/btnMakePayment"
@@ -62,10 +66,11 @@
                 android:id="@+id/txtPayLater"
                 android:layout_width="100dp"
                 android:layout_height="50dp"
+                android:layout_alignParentEnd="true"
                 android:text="@string/pay_later"
-                android:textSize="@dimen/text20"
                 android:textColor="@color/primary"
-                android:layout_alignParentEnd="true"/>
+                android:textSize="@dimen/text18"
+                tools:ignore="TextContrastCheck" />
 
         </RelativeLayout>
 
@@ -83,138 +88,116 @@
 
         <ImageView
             android:id="@+id/bKash"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
             android:layout_marginTop="20dp"
+            android:contentDescription="@string/payment_info"
             android:src="@drawable/bkash"
-            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/editText3"
-            android:contentDescription="@string/payment_info" />
+            app:layout_constraintTop_toBottomOf="@id/editText3" />
 
         <TextView
             android:id="@+id/textType"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
             android:text="@string/personal_number"
             android:textAlignment="center"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/bKash"/>
+            app:layout_constraintStart_toEndOf="@+id/bKash"
+            app:layout_constraintTop_toBottomOf="@+id/editText3" />
 
         <TextView
             android:id="@+id/payPhone1"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/sample_phone_number"
+            android:layout_marginTop="10dp"
             android:autoLink="phone"
+            android:text="@string/real_phone_number"
             android:textAlignment="center"
+            android:textColor="@color/black"
             android:textIsSelectable="true"
+            android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/textType"/>
+            app:layout_constraintStart_toEndOf="@+id/bKash"
+            app:layout_constraintTop_toBottomOf="@+id/textType"
+            tools:ignore="TouchTargetSizeCheck,DuplicateSpeakableTextCheck" />
 
-        <TextView
-            android:id="@+id/payPhone2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textIsSelectable="true"
-            android:text="@string/sample_phone_number"
-            android:autoLink="phone"
-            android:textAlignment="center"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/payPhone1"/>
 
         <ImageView
             android:id="@+id/rocket"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
             android:layout_marginTop="20dp"
+            android:contentDescription="@string/payment_info"
             android:src="@drawable/rocket"
-            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/payPhone2"
-            android:contentDescription="@string/payment_info" />
+            app:layout_constraintTop_toBottomOf="@+id/bKash" />
 
         <TextView
             android:id="@+id/textType2"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
             android:text="@string/personal_number"
             android:textAlignment="center"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/rocket"/>
+            app:layout_constraintStart_toEndOf="@+id/rocket"
+            app:layout_constraintTop_toBottomOf="@+id/bKash" />
 
         <TextView
             android:id="@+id/payPhone3"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/sample_phone_number"
+            android:layout_marginTop="10dp"
             android:autoLink="phone"
-            android:textIsSelectable="true"
+            android:text="@string/rocket"
             android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textIsSelectable="true"
+            android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/textType2"/>
+            app:layout_constraintStart_toEndOf="@+id/rocket"
+            app:layout_constraintTop_toBottomOf="@id/textType2"
+            tools:ignore="TouchTargetSizeCheck" />
 
-        <TextView
-            android:id="@+id/payPhone4"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/sample_phone_number"
-            android:autoLink="phone"
-            android:textIsSelectable="true"
-            android:textAlignment="center"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/payPhone3"/>
 
         <ImageView
             android:id="@+id/nagad"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
             android:layout_marginTop="20dp"
+            android:contentDescription="@string/payment_info"
             android:src="@drawable/nagad"
-            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/payPhone4"
-            android:contentDescription="@string/payment_info" />
+            app:layout_constraintTop_toBottomOf="@+id/rocket" />
 
         <TextView
             android:id="@+id/textType3"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
             android:text="@string/personal_number"
             android:textAlignment="center"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/nagad"/>
+            app:layout_constraintStart_toEndOf="@+id/nagad"
+            app:layout_constraintTop_toBottomOf="@+id/rocket" />
 
         <TextView
             android:id="@+id/payPhone5"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/sample_phone_number"
+            android:layout_marginTop="10dp"
             android:autoLink="phone"
-            android:textIsSelectable="true"
+            android:text="@string/real_phone_number"
             android:textAlignment="center"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/textType3"/>
-
-        <TextView
-            android:id="@+id/payPhone6"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/sample_phone_number"
-            android:autoLink="phone"
+            android:textColor="@color/black"
             android:textIsSelectable="true"
-            android:textAlignment="center"
+            android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/payPhone5"/>
+            app:layout_constraintStart_toEndOf="@+id/nagad"
+            app:layout_constraintTop_toBottomOf="@id/textType3"
+            tools:ignore="TouchTargetSizeCheck" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

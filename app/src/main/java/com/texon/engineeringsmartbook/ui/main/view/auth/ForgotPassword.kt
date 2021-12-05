@@ -44,7 +44,7 @@ class ForgotPassword : AppCompatActivity() {
 
 
     override fun onBackPressed() {
-        val intent = Intent(applicationContext, ForgotPassword::class.java)
+        val intent = Intent(applicationContext, Login::class.java)
         startActivity(intent)
         finish()
     }

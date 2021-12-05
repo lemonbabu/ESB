@@ -20,9 +20,10 @@
         android:orientation="vertical">
 
         <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="130dp"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
             android:layout_margin="50dp"
+            android:layout_gravity="center"
             android:src="@drawable/logo_esb"
             android:contentDescription="@string/logo_esb" />
 
@@ -121,7 +122,6 @@
             android:text="@string/sign_up_button"
             android:textAllCaps="false"
             android:textColor="@color/white"
-            android:textStyle="bold"
             android:textSize="@dimen/text25" />
 
         <Button
@@ -153,7 +153,14 @@
 
     <include
         android:id="@+id/loader"
-        layout="@layout/layout_loader"/>
+        layout="@layout/layout_loader"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
 

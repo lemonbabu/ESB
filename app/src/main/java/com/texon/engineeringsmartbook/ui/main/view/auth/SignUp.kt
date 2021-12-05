@@ -33,8 +33,6 @@ class SignUp : AppCompatActivity() {
         binding = ActivitySignUpBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        loader.progressBar.visibility = View.INVISIBLE
-        binding.btnSignUp.isEnabled = true
         getData()
 
 
@@ -95,8 +93,9 @@ class SignUp : AppCompatActivity() {
                 return@setOnClickListener
             }
 
-            binding.loader.progressBar.visibility = View.VISIBLE
-            binding.btnSignUp.isEnabled = false
+
+            binding.loader.layoutLoader.visibility = View.VISIBLE
+            binding.btnSignUp.isClickable = false
 
 
             setData()
@@ -150,6 +149,7 @@ class SignUp : AppCompatActivity() {
                     if (response.body()?.success!!){
                         Toast.makeText(applicationContext,"Otp Send Successfully",Toast.LENGTH_SHORT).show()
                         val intent = Intent(applicationContext, OtpVerify::class.java)
+                        intent.putExtra("tag", "signUp")
                         startActivity(intent)
                         finish()
                     }
@@ -157,8 +157,8 @@ class SignUp : AppCompatActivity() {
 
                 override fun onFailure(call: Call<SendOtpResponses>, t: Throwable) {
                     Toast.makeText(applicationContext,"Phone or Password not Match",Toast.LENGTH_SHORT).show()
-                    loader.progressBar.visibility = View.INVISIBLE
-                    binding.btnSignUp.isEnabled = true
+                    binding.loader.layoutLoader.visibility = View.GONE
+                    binding.btnSignUp.isClickable = false
                 }
             })
     }

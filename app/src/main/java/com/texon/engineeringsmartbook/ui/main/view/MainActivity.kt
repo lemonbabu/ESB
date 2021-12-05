@@ -27,8 +27,6 @@ class MainActivity : AppCompatActivity(), FragmentCommunicator {
         val nav = intent.getStringExtra("nav")
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        menuHome()
-        loadProfilePic()
 
         when (nav) {
             "home" -> {
@@ -44,6 +42,8 @@ class MainActivity : AppCompatActivity(), FragmentCommunicator {
                 menuHome()
             }
         }
+
+        loadProfilePic()
 
         binding.appBar.btnProfileMenu.setOnClickListener { menuProfile() }
         binding.appBar.btnHomeMenu.setOnClickListener { menuHome() }

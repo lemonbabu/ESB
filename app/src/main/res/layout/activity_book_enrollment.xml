@@ -56,11 +56,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="30dp"
-                android:hint="@string/book_serial_number"
-                android:textAlignment="center"
                 android:background="@drawable/bg_button_shave_white_round"
+                android:hint="@string/book_serial_number"
                 android:importantForAutofill="no"
-                android:inputType="number" />
+                android:inputType="number"
+                android:textAlignment="center"
+                tools:ignore="TextContrastCheck" />
 
             <Button
                 android:id="@+id/btnApply"
@@ -97,7 +98,8 @@
                 android:layout_height="wrap_content"
                 android:text="@string/what_is_it"
                 android:textColor="@color/primary"
-                android:textSize="@dimen/text15"/>
+                android:textSize="@dimen/text15"
+                tools:ignore="TextContrastCheck" />
 
         </LinearLayout>
 

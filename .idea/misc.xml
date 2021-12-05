@@ -41,12 +41,13 @@
         <entry key="..\:/Users/Lemon/Music/ESB/app/src/main/res/layout/activity_book_enrollment.xml" value="0.3484375" />
         <entry key="..\:/Users/Lemon/Music/ESB/app/src/main/res/layout/activity_change_password.xml" value="0.2875" />
         <entry key="..\:/Users/Lemon/Music/ESB/app/src/main/res/layout/activity_dashboard.xml" value="0.1983695652173913" />
-        <entry key="..\:/Users/Lemon/Music/ESB/app/src/main/res/layout/activity_login.xml" value="0.1" />
+        <entry key="..\:/Users/Lemon/Music/ESB/app/src/main/res/layout/activity_fogot_password.xml" value="0.35054347826086957" />
+        <entry key="..\:/Users/Lemon/Music/ESB/app/src/main/res/layout/activity_login.xml" value="0.33" />
         <entry key="..\:/Users/Lemon/Music/ESB/app/src/main/res/layout/activity_main.xml" value="0.25" />
-        <entry key="..\:/Users/Lemon/Music/ESB/app/src/main/res/layout/activity_otp_verify.xml" value="0.22" />
+        <entry key="..\:/Users/Lemon/Music/ESB/app/src/main/res/layout/activity_otp_verify.xml" value="0.33" />
         <entry key="..\:/Users/Lemon/Music/ESB/app/src/main/res/layout/activity_payment_method.xml" value="0.28020833333333334" />
         <entry key="..\:/Users/Lemon/Music/ESB/app/src/main/res/layout/activity_scanner.xml" value="0.2703125" />
-        <entry key="..\:/Users/Lemon/Music/ESB/app/src/main/res/layout/activity_sign_up.xml" value="0.15294117647058825" />
+        <entry key="..\:/Users/Lemon/Music/ESB/app/src/main/res/layout/activity_sign_up.xml" value="0.33" />
         <entry key="..\:/Users/Lemon/Music/ESB/app/src/main/res/layout/activity_splash_screen.xml" value="0.25" />
         <entry key="..\:/Users/Lemon/Music/ESB/app/src/main/res/layout/activity_successfully_enrolled.xml" value="0.29583333333333334" />
         <entry key="..\:/Users/Lemon/Music/ESB/app/src/main/res/layout/activity_user_profile.xml" value="0.28489583333333335" />
@@ -58,6 +59,7 @@
         <entry key="..\:/Users/Lemon/Music/ESB/app/src/main/res/layout/card__get_address.xml" value="0.3625" />
         <entry key="..\:/Users/Lemon/Music/ESB/app/src/main/res/layout/card_book__view.xml" value="0.3625" />
         <entry key="..\:/Users/Lemon/Music/ESB/app/src/main/res/layout/card_book_cover_title.xml" value="0.22" />
+        <entry key="..\:/Users/Lemon/Music/ESB/app/src/main/res/layout/card_book_details_specifications.xml" value="0.34692028985507245" />
         <entry key="..\:/Users/Lemon/Music/ESB/app/src/main/res/layout/card_book_view.xml" value="0.23867753623188406" />
         <entry key="..\:/Users/Lemon/Music/ESB/app/src/main/res/layout/card_get_address.xml" value="0.28020833333333334" />
         <entry key="..\:/Users/Lemon/Music/ESB/app/src/main/res/layout/card_payment_method_inforamtions.xml" value="0.28020833333333334" />
@@ -67,13 +69,16 @@
         <entry key="..\:/Users/Lemon/Music/ESB/app/src/main/res/layout/fragment_book_profile.xml" value="0.35778985507246375" />
         <entry key="..\:/Users/Lemon/Music/ESB/app/src/main/res/layout/fragment_confirm_order.xml" value="0.29635416666666664" />
         <entry key="..\:/Users/Lemon/Music/ESB/app/src/main/res/layout/fragment_dashboard.xml" value="0.22" />
+        <entry key="..\:/Users/Lemon/Music/ESB/app/src/main/res/layout/fragment_first.xml" value="0.34692028985507245" />
         <entry key="..\:/Users/Lemon/Music/ESB/app/src/main/res/layout/fragment_pay_method.xml" value="0.348731884057971" />
         <entry key="..\:/Users/Lemon/Music/ESB/app/src/main/res/layout/fragment_profile.xml" value="0.33" />
         <entry key="..\:/Users/Lemon/Music/ESB/app/src/main/res/layout/fragment_profile_update.xml" value="0.33" />
+        <entry key="..\:/Users/Lemon/Music/ESB/app/src/main/res/layout/fragment_second.xml" value="0.34692028985507245" />
         <entry key="..\:/Users/Lemon/Music/ESB/app/src/main/res/layout/fragment_success_fully_enrolled.xml" value="0.3625" />
         <entry key="..\:/Users/Lemon/Music/ESB/app/src/main/res/layout/fragment_update_password.xml" value="0.3625" />
         <entry key="..\:/Users/Lemon/Music/ESB/app/src/main/res/layout/layout_app_bar.xml" value="0.3625" />
         <entry key="..\:/Users/Lemon/Music/ESB/app/src/main/res/layout/layout_content_item.xml" value="0.3098958333333333" />
+        <entry key="..\:/Users/Lemon/Music/ESB/app/src/main/res/layout/layout_footer_link.xml" value="0.34692028985507245" />
         <entry key="..\:/Users/Lemon/Music/ESB/app/src/main/res/layout/layout_fotter_link.xml" value="0.3625" />
         <entry key="..\:/Users/Lemon/Music/ESB/app/src/main/res/layout/layout_loader.xml" value="0.3625" />
         <entry key="..\:/Users/Lemon/Music/ESB/app/src/main/res/layout/layout_slider_image_holder.xml" value="0.3625" />

@@ -152,7 +152,7 @@ interface ApiInterfaces {
             @Field("payment_method") payMethod: String,
             @Field("account_no") accountNo: String,
             @Field("transaction_id") txId: String ,
-            @Field("address") address: Gson,
+            @Field("address") address: String,
             @Header("Authorization") auth: String,
         ): Call<BookOrderConfirmationResponse>
     }

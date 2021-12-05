@@ -3,13 +3,14 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="69dp">
+    android:layout_height="75dp">
 
     <LinearLayout
         android:id="@+id/titleBarHeading"
         android:visibility="gone"
         android:layout_width="300dp"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginStart="10dp"
         android:layout_height="match_parent">
 
         <ImageView
@@ -52,7 +53,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="30dp"
         android:background="@null"
         android:contentDescription="@string/app_name"
         android:minWidth="48dp"
@@ -65,7 +66,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="30dp"
         android:layout_marginEnd="30dp"
         android:background="@null"
         android:contentDescription="@string/app_name"

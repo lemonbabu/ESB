@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Engineering Smart Book</string>
     <string name="splash_title">Discover Your Knowledge</string>
-    <string name="splash_contain">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et</string>
+    <string name="splash_contain">This is an app you just scan qr code on book and get more lecture on this topic. If you don\'s have a book then click by book button</string>
     <string name="facebook_icon">Facebook Icon</string>
     <string name="twitter_icon">Twitter Icon</string>
     <string name="youtube_icon">Youtube Icon</string>
@@ -99,4 +99,6 @@
     <string name="city">City</string>
     <string name="district">District</string>
     <string name="book_topics">Book Topics</string>
+    <string name="real_phone_number">01629473639</string>
+    <string name="rocket">016294736393</string>
 </resources>

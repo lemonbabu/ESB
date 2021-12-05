@@ -1,5 +1,6 @@
 package com.texon.engineeringsmartbook.ui.main.adapter
 
+import android.util.Log
 import androidx.recyclerview.widget.RecyclerView
 import android.widget.TextView
 import com.texon.engineeringsmartbook.R
@@ -10,10 +11,12 @@ import android.widget.ImageView
 import androidx.recyclerview.widget.DiffUtil
 import com.squareup.picasso.Picasso
 import com.texon.engineeringsmartbook.data.model.DashboardData
+import kotlin.collections.ArrayList
 
-class YourBooksAdapter(private var onYourBookClickListener: OnYourBookClickListener) : RecyclerView.Adapter<YourBooksAdapter.MyViewHolder>() {
+class YourBooksAdapter(private var onYourBookClickListener: OnYourBookClickListener) : RecyclerView.Adapter<YourBooksAdapter.MyViewHolder>(){
 
     private var booksList: List<DashboardData.Data.DashboardBookDataModel> = ArrayList()
+    private val filteredList : ArrayList<DashboardData.Data.DashboardBookDataModel> = ArrayList()
 
     fun submitList(list: List<DashboardData.Data.DashboardBookDataModel>){
         val oldList = booksList
@@ -25,16 +28,16 @@ class YourBooksAdapter(private var onYourBookClickListener: OnYourBookClickListe
         )
         booksList = list
         diffResult.dispatchUpdatesTo(this)
+        customFilter(booksList as ArrayList<DashboardData.Data.DashboardBookDataModel>)
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
-        val itemView = LayoutInflater.from(parent.context)
-            .inflate(R.layout.card_book_view, parent, false)
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): YourBooksAdapter.MyViewHolder {
+        val itemView = LayoutInflater.from(parent.context).inflate(R.layout.card_book_view, parent, false)
         return MyViewHolder(itemView)
     }
 
-    override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
-        val books = booksList[position]
+    override fun onBindViewHolder(holder: YourBooksAdapter.MyViewHolder, position: Int) {
+        val books = filteredList[position]
         holder.bookTitle.text = books.name
         holder.bookPrice.text = ""
         val avatar = books.avatar
@@ -42,12 +45,13 @@ class YourBooksAdapter(private var onYourBookClickListener: OnYourBookClickListe
         Picasso.get().load(avatar).fit().into(holder.coverPic)
 
         holder.itemView.setOnClickListener {
-            onYourBookClickListener.onYourBookClickListener(booksList[position])
+            onYourBookClickListener.onYourBookClickListener(filteredList[position])
         }
     }
 
     override fun getItemCount(): Int {
-        return booksList.size
+        Log.d("Your book ", "= " + filteredList.size)
+        return filteredList.size
     }
 
     inner class MyViewHolder(view: View) : RecyclerView.ViewHolder(view) {
@@ -74,13 +78,26 @@ class YourBooksAdapter(private var onYourBookClickListener: OnYourBookClickListe
         }
 
         override fun areContentsTheSame(oldItemPosition: Int, newItemPosition: Int): Boolean {
-            return oldBookList[oldItemPosition] == newBookList[newItemPosition]
+            return oldBookList[oldItemPosition].equals(newBookList[newItemPosition])
         }
 
     }
 
     interface OnYourBookClickListener{
         fun onYourBookClickListener(result: DashboardData.Data.DashboardBookDataModel)
+    }
+
+
+    private fun customFilter(list: ArrayList<DashboardData.Data.DashboardBookDataModel>) {
+
+        for (item in list) {
+            if (filteredList.find {actor -> item == actor } == null) {
+                filteredList.add(item)
+            }
+            Log.d("Your book id", "= " + item.id.toString())
+        }
+        Log.d("Your book size", "= " + filteredList.size.toString())
+
     }
 
 }

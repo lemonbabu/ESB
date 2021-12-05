@@ -65,20 +65,21 @@
 
                 <RadioButton
                     android:id="@+id/radioButton1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
                     android:checked="true"
                     android:buttonTint="@color/primary"/>
 
                 <RadioButton
                     android:id="@+id/radioButton2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:buttonTint="@color/primary"/>
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:buttonTint="@color/primary"
+                    tools:ignore="DuplicateSpeakableTextCheck" />
                 <RadioButton
                     android:id="@+id/radioButton3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
                     android:buttonTint="@color/primary"/>
 
 
@@ -113,8 +114,9 @@
         </LinearLayout>
 
     <include
+        android:visibility="gone"
         android:id="@+id/loader"
-        layout="@layout/layout_splash_screen"/>
+        layout="@layout/layout_splash_screen" />
 
 
 </RelativeLayout>

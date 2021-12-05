@@ -2,6 +2,7 @@
 <androidx.cardview.widget.CardView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
@@ -35,7 +36,8 @@
             android:paddingEnd="20dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView"/>
+            app:layout_constraintTop_toBottomOf="@+id/textView"
+            tools:ignore="TextContrastCheck" />
 
         <EditText
             android:id="@+id/txtCusPhone"
@@ -45,12 +47,13 @@
             android:background="@drawable/bg_button_shave_white_round"
             android:hint="@string/phone_number_hints"
             android:importantForAutofill="no"
-            android:inputType="number"
+            android:inputType="phone"
             android:paddingStart="20dp"
             android:paddingEnd="20dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txtCusName"/>
+            app:layout_constraintTop_toBottomOf="@+id/txtCusName"
+            tools:ignore="TextContrastCheck" />
 
         <RelativeLayout
             android:id="@+id/relativeLayout"
@@ -73,7 +76,8 @@
                 android:importantForAutofill="no"
                 android:inputType="text"
                 android:paddingStart="20dp"
-                android:paddingEnd="20dp" />
+                android:paddingEnd="20dp"
+                tools:ignore="TextContrastCheck" />
 
             <EditText
                 android:id="@+id/txtDistrict"
@@ -85,7 +89,8 @@
                 android:importantForAutofill="no"
                 android:inputType="text"
                 android:paddingStart="20dp"
-                android:paddingEnd="20dp" />
+                android:paddingEnd="20dp"
+                tools:ignore="TextContrastCheck" />
 
         </RelativeLayout>
 
@@ -93,19 +98,20 @@
             android:id="@+id/txtAddress"
             android:layout_width="match_parent"
             android:layout_height="150dp"
-            android:maxLines="4"
             android:layout_marginTop="10dp"
             android:background="@drawable/bg_button_shave_white_round"
+            android:gravity="start|top"
             android:hint="@string/shipping_address"
             android:importantForAutofill="no"
             android:inputType="text"
-            android:gravity="start|top"
-            android:paddingTop="10dp"
+            android:maxLines="4"
             android:paddingStart="20dp"
+            android:paddingTop="10dp"
             android:paddingEnd="20dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/relativeLayout" />
+            app:layout_constraintTop_toBottomOf="@id/relativeLayout"
+            tools:ignore="TextContrastCheck,DuplicateSpeakableTextCheck" />
 
         <Button
             android:id="@+id/btnConfirmOrder"

@@ -44,8 +44,6 @@ class OtpVerify : AppCompatActivity() {
             phone = flg.toString()
         }
 
-        binding.loader.progressBar.visibility = View.INVISIBLE
-        binding.btnConfirmCode.isClickable = true
 
         val countDownTimer = object : CountDownTimer(60000L, 1000) {
             override fun onTick(millisUntilFinished: Long) {
@@ -72,7 +70,7 @@ class OtpVerify : AppCompatActivity() {
                 binding.txtOtpCode.requestFocus()
                 return@setOnClickListener
             }
-            binding.loader.progressBar.visibility = View.INVISIBLE
+            binding.loader.progressBar.visibility = View.VISIBLE
             binding.btnConfirmCode.isClickable = false
 
             if(flg == "signUp"){
@@ -84,10 +82,11 @@ class OtpVerify : AppCompatActivity() {
         }
 
         binding.btnSendOtpAgain.setOnClickListener {
-            binding.btnSendOtpAgain.visibility = View.INVISIBLE
+            binding.btnSendOtpAgain.visibility = View.GONE
             binding.pnlTimer.visibility = View.VISIBLE
             countDownTimer.start()
             sendOtp()
+            binding.btnConfirmCode.isClickable = true
         }
 
     }
@@ -146,6 +145,7 @@ class OtpVerify : AppCompatActivity() {
 
                 override fun onFailure(call: Call<VerifyOtpResponses>, t: Throwable) {
                     Toast.makeText(applicationContext,"OTP is not valid", Toast.LENGTH_SHORT).show()
+                    binding.loader.progressBar.visibility = View.GONE
                 }
             })
     }

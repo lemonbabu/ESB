@@ -14,6 +14,7 @@
         android:layout_centerInParent="true"/>
 
     <ImageButton
+        android:visibility="gone"
         android:id="@+id/btnPlay"
         android:layout_width="100dp"
         android:layout_height="100dp"
@@ -21,5 +22,9 @@
         android:layout_centerInParent="true"
         android:background="@null"
         android:contentDescription="@string/todo" />
+
+    <include
+        layout="@layout/layout_loader"
+        android:id="@+id/loader"/>
 
 </RelativeLayout>

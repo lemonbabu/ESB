@@ -51,9 +51,15 @@ class DashboardFragment : Fragment(R.layout.fragment_dashboard), YourBooksAdapte
         binding.loader.layoutLoader.visibility = View.VISIBLE
 
         loadProfile()
-        setImageInSlider()
-        setDashBoardData()
-        allBooksData()
+
+        try {
+            setImageInSlider()
+            setDashBoardData()
+            allBooksData()
+        }catch (e: Exception){
+            Log.d("Dashboard= ", "Coroutine error.")
+        }
+
 
         binding.btnYourBooks.setOnClickListener {
             booksData?.your_book.let {
@@ -115,7 +121,7 @@ class DashboardFragment : Fragment(R.layout.fragment_dashboard), YourBooksAdapte
                         response.body()?.data?.your_book.let {
                             it?.let { it1 -> adapterYourBook.submitList(it1) }
                         }
-                        Log.d("Dashboard Data= ", response.body()?.data?.your_book.toString())
+                        //Log.d("Dashboard Data= ", response.body()?.data?.your_book.toString())
                     }
                 }
             }catch (e: Exception) {

@@ -1,18 +1,18 @@
 package com.texon.engineeringsmartbook.ui.main.view.activities
 
-import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.Toast
 import com.google.android.youtube.player.YouTubeBaseActivity
 import com.google.android.youtube.player.YouTubeInitializationResult
 import com.google.android.youtube.player.YouTubePlayer
-import com.texon.engineeringsmartbook.R
 import com.texon.engineeringsmartbook.data.api.ApiInterfaces
 import com.texon.engineeringsmartbook.data.api.RetrofitClient
 import com.texon.engineeringsmartbook.data.model.APiBookAccessResponses
+import com.texon.engineeringsmartbook.databinding.ActivityVideoPlayerBinding
 import com.texon.engineeringsmartbook.ui.main.view.auth.Login
 import kotlinx.android.synthetic.main.activity_video_player.*
 import kotlinx.coroutines.DelicateCoroutinesApi
@@ -23,6 +23,7 @@ import retrofit2.Response
 @DelicateCoroutinesApi
 class VideoPlayer : YouTubeBaseActivity() {
 
+    private lateinit var binding: ActivityVideoPlayerBinding
     private lateinit var qrCode: String
     private lateinit var token: String
     private val bookAccess: ApiInterfaces.BookAccessInterface by lazy { RetrofitClient.getBookAccessByQRCode() }
@@ -32,9 +33,12 @@ class VideoPlayer : YouTubeBaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         qrCode = intent.getStringExtra("qrCode").toString()
-        setContentView(R.layout.activity_video_player)
+        binding = ActivityVideoPlayerBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        val sharedPreferences: SharedPreferences = getSharedPreferences("Session", Context.MODE_PRIVATE)
+        binding.loader.layoutLoader.visibility = View.VISIBLE
+
+        val sharedPreferences: SharedPreferences = getSharedPreferences("Session", MODE_PRIVATE)
         val session = sharedPreferences.getBoolean("session", false)
         if(!session){
             val intent = Intent(applicationContext, Login::class.java)
@@ -47,28 +51,38 @@ class VideoPlayer : YouTubeBaseActivity() {
         //Toast.makeText(applicationContext, "$token ", Toast.LENGTH_SHORT).show()
         getBookAccess()
 
-        btnPlay.setOnClickListener {
-            btnPlay.visibility = View.INVISIBLE
-            player.initialize(youtubeApiKey, youTubePlayerInt)
+        binding.btnPlay.setOnClickListener {
+            binding.btnPlay.visibility = View.GONE
+            binding.player.initialize(youtubeApiKey, youTubePlayerInt)
         }
     }
 
+
     private fun getBookAccess(){
-        bookAccess.getBook( qrCode, "Bearer $token")
-            .enqueue(object : Callback<APiBookAccessResponses> {
-                override fun onResponse(
-                    call: Call<APiBookAccessResponses>,
-                    response: Response<APiBookAccessResponses>
-                ) {
-                    Toast.makeText(applicationContext, response.body()?.data?.video_link,Toast.LENGTH_SHORT).show()
-                    response.body()?.data?.video_link?.let { playVideo(it) }
-                }
+        try {
+            bookAccess.getBook( qrCode, "Bearer $token")
+                .enqueue(object : Callback<APiBookAccessResponses> {
+                    override fun onResponse(
+                        call: Call<APiBookAccessResponses>,
+                        response: Response<APiBookAccessResponses>
+                    ) {
+                        Toast.makeText(applicationContext, response.body()?.data?.video_link,Toast.LENGTH_SHORT).show()
+                        response.body()?.data?.video_link?.let { playVideo(it) }
+                        binding.loader.layoutLoader.visibility = View.GONE
+                        binding.btnPlay.visibility = View.VISIBLE
+                        binding.player.visibility = View.VISIBLE
+                    }
 
-                override fun onFailure(call: Call<APiBookAccessResponses>, t: Throwable) {
-                    Toast.makeText(applicationContext,"QR code is not Valid",Toast.LENGTH_SHORT).show()
-                }
+                    override fun onFailure(call: Call<APiBookAccessResponses>, t: Throwable) {
+                        Toast.makeText(applicationContext,"QR code is not Valid",Toast.LENGTH_SHORT).show()
+                    }
 
-            })
+                })
+        }catch (e: Exception){
+            Log.d("PlayVideo=", e.toString())
+            Toast.makeText(applicationContext,"Try Again",Toast.LENGTH_SHORT).show()
+        }
+
     }
 
     private fun playVideo(link: String){
@@ -78,6 +92,7 @@ class VideoPlayer : YouTubeBaseActivity() {
                 p1: YouTubePlayer?,
                 p2: Boolean
             ) {
+                p1?.setPlayerStyle(YouTubePlayer.PlayerStyle.MINIMAL)
                 p1?.loadVideo(link)
             }
 
@@ -86,6 +101,7 @@ class VideoPlayer : YouTubeBaseActivity() {
                 p1: YouTubeInitializationResult?
             ) {
                 Toast.makeText(applicationContext,"Link is not working", Toast.LENGTH_SHORT).show()
+                Log.d("PlayVideo=", "Link is not working")
             }
         }
     }

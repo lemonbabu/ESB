@@ -5,12 +5,14 @@ import android.content.Intent
 import android.content.pm.PackageManager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import com.budiyev.android.codescanner.*
 import com.texon.engineeringsmartbook.R
 import kotlinx.coroutines.DelicateCoroutinesApi
+import java.lang.Exception
 
 @DelicateCoroutinesApi
 class Scanner : AppCompatActivity() {
@@ -39,22 +41,27 @@ class Scanner : AppCompatActivity() {
         codeScanner.isAutoFocusEnabled = true
         codeScanner.isFlashEnabled = false
 
-        codeScanner.decodeCallback = DecodeCallback {
-            runOnUiThread {
-                val intent = Intent(applicationContext, VideoPlayer::class.java)
-                intent.putExtra("qrCode", it.text)
-                startActivity(intent)
-                finish()
+        try {
+            codeScanner.decodeCallback = DecodeCallback {
+                runOnUiThread {
+                    val intent = Intent(applicationContext, VideoPlayer::class.java)
+                    intent.putExtra("qrCode", it.text)
+                    startActivity(intent)
+                    finish()
+                }
             }
+
+            codeScanner.errorCallback = ErrorCallback {
+                runOnUiThread {
+                    Toast.makeText(this, "Error: ${it.message}", Toast.LENGTH_LONG).show()
+                }
+            }
+
+            scannerView.setOnClickListener { codeScanner.startPreview() }
+        }catch (e: Exception){
+            Log.d("Scanning", "Exception Error")
         }
 
-        codeScanner.errorCallback = ErrorCallback {
-            runOnUiThread {
-                Toast.makeText(this, "Error: ${it.message}", Toast.LENGTH_LONG).show()
-            }
-        }
-
-        scannerView.setOnClickListener { codeScanner.startPreview() }
     }
 
     override fun onRequestPermissionsResult(

@@ -48,8 +48,8 @@ class SplashScreen : AppCompatActivity() {
                                 .setTitle("Update Required")
                                 .setMessage("Update your apps form play store")
                                 .setPositiveButton("Update") { _, _ ->
-                                    val uri =
-                                        Uri.parse("https://play.google.com/store/apps/details?id=null")
+                                    val uri = Uri.parse("https://engineeringsmartbook.com/assets/download/ESB%20v1.0.0.apk")
+                                    //val uri = Uri.parse("https://play.google.com/store/apps/details?id=null")
                                     startActivity(Intent(Intent.ACTION_VIEW, uri))
                                     finish()
                                 }
@@ -95,7 +95,7 @@ class SplashScreen : AppCompatActivity() {
             startActivity(intent)
             finish()
         }else{
-            binding.loader.loaderSplash.visibility = View.INVISIBLE
+            binding.loader.loaderSplash.visibility = View.GONE
         }
     }
 
