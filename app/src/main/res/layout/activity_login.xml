@@ -103,7 +103,7 @@
 
             <TextView
                 android:id="@+id/txtForgetPassword"
-                android:layout_width="wrap_content"
+                android:layout_width="130dp"
                 android:layout_height="wrap_content"
                 android:text="@string/forgot_password_login"
                 android:textColor="#00838F"
@@ -152,6 +152,7 @@
             app:layout_constraintBottom_toBottomOf="parent"/>
 
         <include
+            android:visibility="gone"
             android:id="@+id/loader"
             layout="@layout/layout_loader"
             android:layout_width="match_parent"

@@ -50,7 +50,7 @@ class BookProfileFragment : Fragment(R.layout.fragment_book_profile), BookTopicC
                             Picasso.get().load(it.avatar).fit().into(binding.bookInfo.imgBookCover)
                             adapter.submitList(it.chapterDetails)
                         }
-                        Log.d("Book Profile", response.toString())
+                        //Log.d("Book Profile", response.body()?.data.toString())
                     }
                 }
 
@@ -61,10 +61,11 @@ class BookProfileFragment : Fragment(R.layout.fragment_book_profile), BookTopicC
                 }
             }
         }
-        Log.d("Book Profile", "Loading book contain")
+        //Log.d("Book Profile", "Loading book contain")
     }
 
     override fun onBookClickListener(result: BookDetailsDataModel.Data.ChapterDetail) {
 
     }
+
 }

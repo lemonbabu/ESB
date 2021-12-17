@@ -7,19 +7,18 @@
 
     <LinearLayout
         android:id="@+id/titleBarHeading"
-        android:visibility="gone"
         android:layout_width="300dp"
-        android:layout_marginTop="30dp"
+        android:layout_height="match_parent"
         android:layout_marginStart="10dp"
-        android:layout_height="match_parent">
+        android:layout_marginTop="10dp">
 
         <ImageView
             android:layout_width="50dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginEnd="5dp"
-            android:src="@drawable/logo_esb"
-            android:contentDescription="@string/app_bar_home_button" />
+            android:contentDescription="@string/app_bar_home_button"
+            android:src="@drawable/logo_esb" />
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -30,10 +29,11 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
                 android:text="@string/engineering"
                 android:textColor="@color/primary"
-                android:textStyle="bold"
                 android:textSize="22sp"
+                android:textStyle="bold"
                 tools:ignore="RelativeOverlap" />
 
             <TextView
@@ -41,8 +41,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="2dp"
                 android:text="@string/smart_book"
-                android:textStyle="bold"
-                android:textSize="14sp"/>
+                android:textSize="14sp"
+                android:textStyle="bold" />
         </LinearLayout>
 
     </LinearLayout>
@@ -53,7 +53,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="15dp"
         android:background="@null"
         android:contentDescription="@string/app_name"
         android:minWidth="48dp"
@@ -66,7 +66,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="15dp"
         android:layout_marginEnd="30dp"
         android:background="@null"
         android:contentDescription="@string/app_name"

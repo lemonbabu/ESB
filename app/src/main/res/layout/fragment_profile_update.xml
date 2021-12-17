@@ -49,17 +49,17 @@
             android:importantForAutofill="no" />
 
         <Button
-            android:layout_below="@+id/txtUserEmail"
             android:id="@+id/btnUpdate"
             android:layout_width="160dp"
             android:layout_height="48dp"
+            android:layout_below="@+id/txtUserEmail"
             android:layout_marginTop="100dp"
             android:background="@drawable/bg_button_shape_corner_round"
             android:text="@string/update"
             android:textAlignment="center"
             android:textAllCaps="false"
             android:textColor="@color/white"
-            android:textSize="@dimen/text25"
+            android:textSize="@dimen/text20"
             android:textStyle="bold" />
 
     </RelativeLayout>

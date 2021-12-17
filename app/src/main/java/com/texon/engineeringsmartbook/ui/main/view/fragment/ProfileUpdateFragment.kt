@@ -65,7 +65,7 @@ class ProfileUpdateFragment : Fragment(R.layout.fragment_profile_update) {
             val avatar = sharedPreferences.getString("avatar", "")
             Picasso.get()
                 .load(avatar)
-                .placeholder(R.mipmap.ic_launcher)
+                .fit()
                 .into(binding.profileAvatar)
         }
         else{

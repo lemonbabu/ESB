@@ -11,7 +11,6 @@
         android:id="@+id/header"
         android:layout_width="fill_parent"
         android:layout_height="69dp"
-        android:layout_marginTop="20dp"
         android:layout_alignParentTop="true">
 
         <include
@@ -33,7 +32,7 @@
             <ImageView
                 android:id="@+id/imgBooksCover"
                 android:layout_width="match_parent"
-                android:layout_height="270dp"
+                android:layout_height="230dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginStart="20dp"
                 android:layout_marginEnd="20dp"
@@ -50,7 +49,7 @@
                 android:layout_marginTop="20dp"
                 android:layout_marginStart="20dp"
                 android:text="@string/your_books"
-                android:textSize="25sp"
+                android:textSize="23sp"
                 android:maxLines="1"
                 android:ellipsize="end"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -111,7 +110,9 @@
                 android:id="@+id/linearLayout2"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:layout_margin="20dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="10dp"
                 android:orientation="horizontal"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -119,7 +120,7 @@
 
                 <ImageView
                     android:layout_width="50dp"
-                    android:layout_height="50dp"
+                    android:layout_height="48dp"
                     android:layout_marginEnd="10dp"
                     android:contentDescription="@string/your_books"
                     android:src="@drawable/ic_user_image"
@@ -181,7 +182,7 @@
                 android:id="@+id/linearLayout3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="15dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
@@ -191,7 +192,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_alignParentStart="true"
-                    android:layout_marginStart="20dp"
+                    android:layout_marginStart="18dp"
                     android:text="@string/book_description"
                     android:textAlignment="viewStart"
                     android:textSize="20sp" />
@@ -214,7 +215,7 @@
                 android:id="@+id/linearLayout4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="15dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/linearLayout3">
@@ -224,7 +225,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_alignParentStart="true"
-                    android:layout_marginStart="20dp"
+                    android:layout_marginStart="18dp"
                     android:text="@string/book_description"
                     android:textAlignment="viewStart"
                     android:textSize="20sp" />
@@ -262,7 +263,7 @@
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:text="@string/order_now"
-            android:textSize="@dimen/text20"
+            android:textSize="@dimen/text18"
             android:textStyle="bold"
             android:textColor="@color/primary"
             android:background="@drawable/bg_white_round"
@@ -273,7 +274,7 @@
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:text="@string/get_access"
-            android:textSize="@dimen/text20"
+            android:textSize="@dimen/text18"
             android:textStyle="bold"
             android:textColor="@color/white"
             android:background="@drawable/bg_button_shape_corner_round"

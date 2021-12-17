@@ -33,7 +33,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:textAlignment="center"
-            android:textSize="@dimen/text30"
+            android:textSize="@dimen/text25"
             android:textStyle="bold"
             android:text="@string/splash_title" />
 

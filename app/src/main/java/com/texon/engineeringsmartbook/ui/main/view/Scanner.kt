@@ -1,7 +1,8 @@
-package com.texon.engineeringsmartbook.ui.main.view.activities
+package com.texon.engineeringsmartbook.ui.main.view
 
 import android.Manifest
 import android.content.Intent
+import android.content.SharedPreferences
 import android.content.pm.PackageManager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -11,16 +12,37 @@ import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import com.budiyev.android.codescanner.*
 import com.texon.engineeringsmartbook.R
+import com.texon.engineeringsmartbook.data.api.ApiInterfaces
+import com.texon.engineeringsmartbook.data.api.RetrofitClient
+import com.texon.engineeringsmartbook.data.model.APiBookAccessResponses
+import com.texon.engineeringsmartbook.ui.main.view.activities.VideoPlayer
+import com.texon.engineeringsmartbook.ui.main.view.auth.Login
 import kotlinx.coroutines.DelicateCoroutinesApi
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 import java.lang.Exception
 
 @DelicateCoroutinesApi
 class Scanner : AppCompatActivity() {
+
     private lateinit var codeScanner: CodeScanner
+    private val bookAccess: ApiInterfaces.BookAccessInterface by lazy { RetrofitClient.getBookAccessByQRCode() }
+    private var token = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_scanner)
+
+        val sharedPreferences: SharedPreferences = getSharedPreferences("Session", MODE_PRIVATE)
+        val session = sharedPreferences.getBoolean("session", false)
+        if(!session){
+            val intent = Intent(applicationContext, Login::class.java)
+            startActivity(intent)
+            finish()
+        }else{
+            token = sharedPreferences.getString("token", "")!!
+        }
 
         if(ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA) == PackageManager.PERMISSION_DENIED){
             ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.CAMERA), 123)
@@ -44,10 +66,8 @@ class Scanner : AppCompatActivity() {
         try {
             codeScanner.decodeCallback = DecodeCallback {
                 runOnUiThread {
-                    val intent = Intent(applicationContext, VideoPlayer::class.java)
-                    intent.putExtra("qrCode", it.text)
-                    startActivity(intent)
-                    finish()
+                    getBookAccess(it.text)
+                    Log.d("Scanning", it.text)
                 }
             }
 
@@ -93,4 +113,38 @@ class Scanner : AppCompatActivity() {
         }
         super.onPause()
     }
+
+    private fun getBookAccess(qrCode: String){
+        try {
+            bookAccess.getBook( qrCode, "Bearer $token")
+                .enqueue(object : Callback<APiBookAccessResponses> {
+                    override fun onResponse(
+                        call: Call<APiBookAccessResponses>,
+                        response: Response<APiBookAccessResponses>
+                    ) {
+                        try{
+                            Toast.makeText(applicationContext, response.body()?.data?.video_link, Toast.LENGTH_SHORT).show()
+                            response.body()?.data?.video_link?.let {
+                                val intent = Intent(applicationContext, VideoPlayer::class.java)
+                                intent.putExtra("link", it)
+                                startActivity(intent)
+                                finish()
+                            }
+                        }catch (e: Exception){
+                            Toast.makeText(applicationContext,"You have no access in this book", Toast.LENGTH_SHORT).show()
+                        }
+                    }
+
+                    override fun onFailure(call: Call<APiBookAccessResponses>, t: Throwable) {
+                        Toast.makeText(applicationContext,"QR code is not Valid", Toast.LENGTH_SHORT).show()
+                    }
+
+                })
+        }catch (e: Exception){
+            Log.d("PlayVideo=", e.toString())
+            Toast.makeText(applicationContext,"Try Again", Toast.LENGTH_SHORT).show()
+        }
+
+    }
+
 }

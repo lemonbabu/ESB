@@ -41,7 +41,6 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="50dp"
             android:layout_marginEnd="50dp"
-            android:layout_marginBottom="30dp"
             android:orientation="horizontal">
 
             <TextView
@@ -72,6 +71,7 @@
             android:layout_gravity="center"
             android:layout_marginStart="50dp"
             android:layout_marginEnd="50dp"
+            android:layout_marginTop="100dp"
             android:layout_marginBottom="30dp"
             android:background="@drawable/bg_button_shave_white_round"
             android:hint="@string/otp_code"
@@ -94,7 +94,7 @@
             android:text="@string/confirm_code"
             android:textAllCaps="false"
             android:textColor="@color/white"
-            android:textSize="@dimen/text25" />
+            android:textSize="@dimen/text20" />
 
         <LinearLayout
             android:id="@+id/pnlTimer"

@@ -75,7 +75,7 @@ class UpdatePasswordFragment : Fragment(R.layout.fragment_update_password) {
             val avatar = sharedPreferences.getString("avatar", "")
             Picasso.get()
                 .load(avatar)
-                .placeholder(R.mipmap.ic_launcher)
+                .fit()
                 .into(binding.profileAvatar)
         }
         else{

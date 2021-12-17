@@ -3,18 +3,23 @@ package com.texon.engineeringsmartbook.ui.main.view
 import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.view.WindowManager
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.squareup.picasso.Picasso
 import com.texon.engineeringsmartbook.R
-import com.texon.engineeringsmartbook.ui.main.view.activities.Scanner
 import com.texon.engineeringsmartbook.databinding.ActivityMainBinding
+import com.texon.engineeringsmartbook.ui.main.view.activities.ExoPlayer
+import com.texon.engineeringsmartbook.ui.main.view.activities.VideoPlayer
 import com.texon.engineeringsmartbook.ui.main.view.auth.Login
 import com.texon.engineeringsmartbook.ui.main.view.fragment.*
 import com.texon.engineeringsmartbook.ui.main.viewModel.FragmentCommunicator
 import kotlinx.coroutines.DelicateCoroutinesApi
+import java.net.NetworkInterface
+import java.util.*
+
 
 @DelicateCoroutinesApi
 class MainActivity : AppCompatActivity(), FragmentCommunicator {
@@ -22,11 +27,34 @@ class MainActivity : AppCompatActivity(), FragmentCommunicator {
     private lateinit var binding: ActivityMainBinding
     private var backPress = false
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val nav = intent.getStringExtra("nav")
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        window.setFlags(
+            WindowManager.LayoutParams.FLAG_FULLSCREEN,
+            WindowManager.LayoutParams.FLAG_FULLSCREEN)
+
+//        val wifiManager = applicationContext.getSystemService(WIFI_SERVICE) as WifiManager
+//        val mac = wifiManager.connectionInfo.macAddress
+
+//        val admin = DeviceAdminReceiver()
+//        val devicepolicymanager = admin.getManager(applicationContext)
+//        val name1 = admin.getWho(applicationContext)
+//        if (devicepolicymanager.isAdminActive(name1)) {
+//            val mac_address = devicepolicymanager.getWifiMacAddress(name1)
+//            Log.e("macAddress", "" + mac_address)
+//        }
+//
+//        val wifiManager = applicationContext.getSystemService(WIFI_SERVICE) as WifiManager
+//        val wInfo = wifiManager.connectionInfo
+//        val macAddress = wInfo.macAddress
+//
+//        val mac = getMacAddress()
+//        Toast.makeText(applicationContext, macAddress, Toast.LENGTH_LONG).show()
+//        Log.d("Mac", macAddress)
 
         when (nav) {
             "home" -> {
@@ -43,14 +71,19 @@ class MainActivity : AppCompatActivity(), FragmentCommunicator {
             }
         }
 
-        loadProfilePic()
+       loadProfilePic()
 
         binding.appBar.btnProfileMenu.setOnClickListener { menuProfile() }
         binding.appBar.btnHomeMenu.setOnClickListener { menuHome() }
         binding.appBar.btnScannerMenu.setOnClickListener {
             val intent = Intent(applicationContext, Scanner::class.java)
             startActivity(intent)
+//            val intent = Intent(this, VideoPlayer::class.java)
+//            //intent.putExtra("link", "JOJesiI1HTs")
+//            startActivity(intent)
+            //finish()
         }
+
         binding.headerTitle.btnBackMenu.setOnClickListener { menuHome() }
 
     }
@@ -195,10 +228,7 @@ class MainActivity : AppCompatActivity(), FragmentCommunicator {
         val session = sharedPreferences.getBoolean("session", false)
         if(session){
             val avatar = sharedPreferences.getString("avatar", "")
-            Picasso.get()
-                .load(avatar)
-                .placeholder(R.mipmap.ic_launcher)
-                .into(binding.appBar.btnProfileMenu)
+            Picasso.get().load(avatar).fit().into(binding.appBar.btnProfileMenu)
         }
         else{
             val intent = Intent(applicationContext, Login::class.java)
@@ -207,5 +237,25 @@ class MainActivity : AppCompatActivity(), FragmentCommunicator {
         }
     }
 
+    private fun getMacAddress(): String {
+        try {
+            val all: List<NetworkInterface> =
+                Collections.list(NetworkInterface.getNetworkInterfaces())
+            for (nif in all) {
+                if (!nif.name.equals("wlan0", ignoreCase = true)) continue
+                val macBytes = nif.hardwareAddress ?: return "null"
+                val res1 = StringBuilder()
+                for (b in macBytes) {
+                    res1.append(String.format("%02X:", b))
+                }
+                if (res1.isNotEmpty()) {
+                    res1.deleteCharAt(res1.length - 1)
+                }
+                return res1.toString()
+            }
+        } catch (ex: Exception) {
+        }
+        return "02:00:00:00:00:00"
+    }
 
 }

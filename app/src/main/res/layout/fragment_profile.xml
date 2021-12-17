@@ -94,7 +94,7 @@
                 android:textAlignment="center"
                 android:textAllCaps="false"
                 android:textColor="@color/white"
-                android:textSize="@dimen/text25"
+                android:textSize="@dimen/text20"
                 android:textStyle="bold" />
 
             <Button

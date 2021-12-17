@@ -59,10 +59,7 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
             binding.txtUserName.text = sharedPreferences.getString("name", "")
             binding.txtUserPhone.text = sharedPreferences.getString("phone", "")
             val avatar = sharedPreferences.getString("avatar", "")
-            Picasso.get()
-                .load(avatar)
-                .placeholder(R.mipmap.ic_launcher)
-                .into(binding.profileAvatar)
+            Picasso.get().load(avatar).fit().into(binding.profileAvatar)
         }
         else{
             val intent = Intent(this.context, Login::class.java)

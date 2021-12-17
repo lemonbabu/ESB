@@ -8,6 +8,7 @@ import android.content.Intent
 import android.content.SharedPreferences
 import android.net.Uri
 import android.view.View
+import android.view.WindowManager
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import com.texon.engineeringsmartbook.BuildConfig
@@ -32,6 +33,9 @@ class SplashScreen : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivitySplashScreenBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        window.setFlags(
+            WindowManager.LayoutParams.FLAG_FULLSCREEN,
+            WindowManager.LayoutParams.FLAG_FULLSCREEN)
 
         binding.loader.loaderSplash.visibility = View.VISIBLE
         //checkVersion()
@@ -48,7 +52,7 @@ class SplashScreen : AppCompatActivity() {
                                 .setTitle("Update Required")
                                 .setMessage("Update your apps form play store")
                                 .setPositiveButton("Update") { _, _ ->
-                                    val uri = Uri.parse("https://engineeringsmartbook.com/assets/download/ESB%20v1.0.0.apk")
+                                    val uri = Uri.parse("https://play.google.com/store/apps/details?id=com.texon.engineeringsmartbook")
                                     //val uri = Uri.parse("https://play.google.com/store/apps/details?id=null")
                                     startActivity(Intent(Intent.ACTION_VIEW, uri))
                                     finish()
@@ -65,7 +69,6 @@ class SplashScreen : AppCompatActivity() {
                     Toast.makeText(applicationContext, "Check you Internet Connection", Toast.LENGTH_LONG).show()
                 }
              }
-
         }
 
 

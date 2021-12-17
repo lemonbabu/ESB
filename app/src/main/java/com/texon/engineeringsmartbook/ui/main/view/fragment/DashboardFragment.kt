@@ -1,9 +1,9 @@
 package com.texon.engineeringsmartbook.ui.main.view.fragment
 
-import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
+import android.graphics.Color
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -39,15 +39,12 @@ class DashboardFragment : Fragment(R.layout.fragment_dashboard), YourBooksAdapte
     private lateinit var adapterYourBook : YourBooksAdapter
 
 
-    @SuppressLint("ResourceAsColor")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding = FragmentDashboardBinding.bind(view)
 
         fc = activity as FragmentCommunicator
-        adapterYourBook = YourBooksAdapter(this)
         binding.rvYourBooks.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
-        binding.rvYourBooks.adapter = adapterYourBook
         binding.loader.layoutLoader.visibility = View.VISIBLE
 
         loadProfile()
@@ -63,20 +60,25 @@ class DashboardFragment : Fragment(R.layout.fragment_dashboard), YourBooksAdapte
 
         binding.btnYourBooks.setOnClickListener {
             booksData?.your_book.let {
-                it?.let { it1 -> adapterYourBook.submitList(it1)
+                adapterYourBook = YourBooksAdapter(this)
+                binding.rvYourBooks.adapter = adapterYourBook
+                it?.let {
+                        it1 -> adapterYourBook.submitList(it1)
                     Log.d("Dashboard Data= ", it1.toString())}
-                binding.btnYourBooks.setTextColor(R.color.primary)
-                binding.btnFreeVideo.setTextColor(R.color.black_light)
+                binding.btnYourBooks.setTextColor(Color.parseColor("#4B839A"))
+                binding.btnFreeVideo.setTextColor(Color.parseColor("#232323"))
 
             }
         }
 
         binding.btnFreeVideo.setOnClickListener {
             booksData?.free_video.let {
+                adapterYourBook = YourBooksAdapter(this)
+                binding.rvYourBooks.adapter = adapterYourBook
                 it?.let { it1 -> adapterYourBook.submitList(it1)
                     Log.d("Dashboard Data= ", it1.toString())}
-                binding.btnFreeVideo.setTextColor(R.color.primary)
-                binding.btnYourBooks.setTextColor(R.color.black_light)
+                binding.btnFreeVideo.setTextColor(Color.parseColor("#4B839A"))
+                binding.btnYourBooks.setTextColor(Color.parseColor("#232323"))
             }
         }
 
@@ -119,9 +121,11 @@ class DashboardFragment : Fragment(R.layout.fragment_dashboard), YourBooksAdapte
                             booksData = it
                         }
                         response.body()?.data?.your_book.let {
+                            adapterYourBook = YourBooksAdapter(this@DashboardFragment)
+                            binding.rvYourBooks.adapter = adapterYourBook
                             it?.let { it1 -> adapterYourBook.submitList(it1) }
                         }
-                        //Log.d("Dashboard Data= ", response.body()?.data?.your_book.toString())
+                        //Log.d("Dashboard Data Y= ", response.body()?.data?.your_book.toString())
                     }
                 }
             }catch (e: Exception) {
