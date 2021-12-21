@@ -2,32 +2,92 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.texon.engineeringsmartbook">
 
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+
+  <!--  <queries>
+        <intent>
+            <action android:name="com.google.android.youtube.api.service.START" />
+        </intent>
+    </queries>
+-->
     <application
         android:allowBackup="true"
         android:icon="@drawable/logo_esb"
-        android:label="@string/app_short_name"
+        android:label="@string/app_name"
         android:roundIcon="@drawable/logo_esb"
         android:supportsRtl="true"
         android:theme="@style/Theme.EngineeringSmartBook">
         <activity
-            android:name=".View.Auth.OtpVerify"
+            android:name=".ui.main.view.activities.YoutubeActivity"
             android:exported="false" />
         <activity
-            android:name=".View.Auth.SignUp"
+            android:name=".ui.main.view.activities.PlayerActivity"
             android:exported="false" />
         <activity
-            android:name=".View.Auth.Login"
+            android:name=".ui.main.view.activities.VideoPlayerActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".ui.main.view.auth.ChangePassword"
             android:exported="false" />
         <activity
-            android:name=".View.SplashScreen"
+            android:name=".ui.main.view.activities.VideoPlayer"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:exported="false" />
+        <activity
+            android:name=".ui.main.view.Scanner"
+            android:exported="false" />
+        <activity
+            android:name=".ui.main.view.MainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.main.view.activities.BookDetails"
+            android:exported="false" />
+        <activity
+            android:name=".ui.main.view.BookEnrollment"
+            android:exported="false" />
+        <activity
+            android:name=".ui.main.view.SuccessfullyEnrolled"
+            android:exported="false" />
+        <activity
+            android:name=".ui.main.view.auth.OtpVerify"
+            android:exported="false" />
+        <activity
+            android:name=".ui.main.view.auth.SignUp"
+            android:exported="false" />
+        <activity
+            android:name=".ui.main.view.auth.Login"
+            android:exported="false" />
+        <activity
+            android:name=".ui.main.view.auth.ForgotPassword"
+            android:exported="false" />
+        <activity
+            android:name=".ui.main.view.activities.SplashScreen"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ui.main.view.activities.ExoPlayer"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.android.exoplayer.demo.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:scheme="http" />
+                <data android:scheme="https" />
+                <data android:scheme="content" />
+                <data android:scheme="asset" />
+                <data android:scheme="file" />
             </intent-filter>
         </activity>
     </application>

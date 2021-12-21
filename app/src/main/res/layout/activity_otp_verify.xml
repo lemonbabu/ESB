@@ -1,25 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-    <android.support.constraint.ConstraintLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/primary"
-    tools:context=".View.Auth.OtpVerify">
+    android:screenOrientation="portrait"
+    tools:context=".ui.main.view.auth.OtpVerify">
 
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="100dp"
-        android:background="@drawable/bg_while_round"
+        android:background="@drawable/bg_white_round"
         android:orientation="vertical">
 
         <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="150dp"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
             android:layout_margin="50dp"
+            android:layout_gravity="center"
             android:src="@drawable/logo_esb"
             android:contentDescription="@string/logo_esb" />
 
@@ -32,14 +34,13 @@
             android:textSize="@dimen/text25"
             android:textColor="@color/black"
             android:textStyle="bold"
-            android:text="Verify your Phone"/>
+            android:text="@string/verify_your_phone"/>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="50dp"
             android:layout_marginEnd="50dp"
-            android:layout_marginBottom="30dp"
             android:orientation="horizontal">
 
             <TextView
@@ -51,6 +52,7 @@
                 android:text="@string/verification_code_sent_to"/>
 
             <TextView
+                android:id="@+id/txtPhoneNumber"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -62,29 +64,29 @@
         </LinearLayout>
 
 
-
-
-
         <EditText
+            android:id="@+id/txtOtpCode"
             android:layout_width="wrap_content"
-            android:layout_height="45dp"
+            android:layout_height="48dp"
+            android:layout_gravity="center"
             android:layout_marginStart="50dp"
             android:layout_marginEnd="50dp"
+            android:layout_marginTop="100dp"
             android:layout_marginBottom="30dp"
-            android:layout_gravity="center"
             android:background="@drawable/bg_button_shave_white_round"
             android:hint="@string/otp_code"
+            android:importantForAutofill="no"
             android:inputType="number"
-            android:textSize="@dimen/text18"
             android:textAlignment="center"
-            android:importantForAutofill="no" />
+            android:textSize="@dimen/text18"
+            tools:ignore="TextContrastCheck" />
 
 
 
         <Button
             android:id="@+id/btnConfirmCode"
             android:layout_width="match_parent"
-            android:layout_height="45dp"
+            android:layout_height="48dp"
             android:layout_marginStart="50dp"
             android:layout_marginEnd="50dp"
             android:layout_marginBottom="30dp"
@@ -92,10 +94,10 @@
             android:text="@string/confirm_code"
             android:textAllCaps="false"
             android:textColor="@color/white"
-            android:textStyle="bold"
-            android:textSize="@dimen/text25" />
+            android:textSize="@dimen/text20" />
 
         <LinearLayout
+            android:id="@+id/pnlTimer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="50dp"
@@ -105,6 +107,7 @@
             android:orientation="horizontal">
 
             <TextView
+                android:id="@+id/txtTimer"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -123,46 +126,40 @@
 
         </LinearLayout>
 
-
+        <Button
+            android:visibility="invisible"
+            android:id="@+id/btnSendOtpAgain"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="-50dp"
+            android:layout_marginStart="50dp"
+            android:layout_marginEnd="50dp"
+            android:background="@drawable/bg_button_shave_white_round"
+            android:text="@string/send_otp_again"
+            android:textAllCaps="false"
+            android:textColor="@color/primary"
+            android:textSize="@dimen/text20"
+            tools:ignore="TextContrastCheck" />
 
     </LinearLayout>
 
-    <LinearLayout
+    <include
+        layout="@layout/layout_footer_link"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="bottom"
-        android:gravity="center"
-        android:orientation="horizontal"
-        android:layout_margin="5dp"
-        app:layout_constraintBottom_toBottomOf="@+id/linearLayout"
-        tools:layout_editor_absoluteX="50dp">
+        android:layout_margin="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
 
-        <ImageButton
-            android:id="@+id/iconFb"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_facebook_square"
-            android:contentDescription="@string/facebook_icon" />
-
-        <ImageButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic__twitter_square"
-            android:contentDescription="@string/twitter_icon" />
-
-        <ImageButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_youtube"
-            android:contentDescription="@string/youtube_icon" />
-
-        <ImageButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_linkedin"
-            android:contentDescription="@string/linkdin_icon" />
-
-    </LinearLayout>
+    <include
+        android:id="@+id/loader"
+        layout="@layout/layout_loader"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
-</android.support.constraint.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

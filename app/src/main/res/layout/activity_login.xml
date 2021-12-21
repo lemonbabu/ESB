@@ -1,180 +1,167 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/primary"
-    tools:context=".View.Auth.Login">
+    android:screenOrientation="portrait"
+    android:fillViewport="true"
+    android:windowSoftInputMode="adjustPan"
+    tools:context=".ui.main.view.auth.Login">
 
-
-    <LinearLayout
-        android:id="@+id/linearLayout"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginTop="100dp"
-        android:background="@drawable/bg_while_round"
+        android:background="@drawable/bg_white_round"
         android:orientation="vertical">
 
         <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="150dp"
+            android:id="@+id/imageView2"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
             android:layout_margin="50dp"
+            android:contentDescription="@string/logo_esb"
             android:src="@drawable/logo_esb"
-            android:contentDescription="@string/logo_esb" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="50dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="50dp"
-            android:layout_marginBottom="20dp"
-            android:orientation="horizontal">
 
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="10dp"
-                android:src="@drawable/ic_awesome_phone_alt"
-                android:contentDescription="@string/phone_icon" />
-
-            <EditText
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@color/white"
-                android:hint="@string/phone_number_hints"
-                android:textSize="@dimen/text18"
-                android:autofillHints="017"
-                android:inputType= "phone" />
-
-        </LinearLayout>
-
-        <LinearLayout
+        <EditText
+            android:id="@+id/txtUserPhone"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="50dp"
             android:layout_marginEnd="50dp"
-            android:layout_marginBottom="40dp"
-            android:orientation="horizontal">
+            android:layout_marginTop="40dp"
+            android:autofillHints="phone"
+            android:background="@color/white"
+            android:drawableStart="@drawable/ic_awesome_phone_alt"
+            android:drawablePadding="15dp"
+            android:hint="@string/phone_number_hints"
+            android:inputType="phone"
+            android:minWidth="48dp"
+            android:minHeight="48dp"
+            android:padding="5dp"
+            android:textColorHint="#78909C"
+            android:textSize="@dimen/text18"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView2"
+            tools:ignore="TextContrastCheck" />
 
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="10dp"
-                android:src="@drawable/ic_material_lock"
-                android:contentDescription="@string/password_icon" />
-
-            <EditText
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@color/white"
-                android:hint="@string/password_hints"
-                android:inputType="textPassword"
-                android:textSize="@dimen/text18"
-                android:layout_marginTop="5dp"
-                android:importantForAutofill="no" />
-
-        </LinearLayout>
-
-        <LinearLayout
+        <EditText
+            android:id="@+id/txtUserPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="50dp"
             android:layout_marginEnd="50dp"
-            android:layout_marginBottom="10dp"
-            android:orientation="horizontal">
+            android:background="@color/white"
+            android:drawableStart="@drawable/ic_material_lock"
+            android:drawablePadding="20dp"
+            android:autofillHints="password"
+            android:hint="@string/password_hints"
+            android:inputType="textPassword"
+            android:minWidth="48dp"
+            android:minHeight="48dp"
+            android:padding="5dp"
+            android:textSize="@dimen/text18"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtUserPhone" />
+
+        <LinearLayout
+            android:id="@+id/linearLayout7"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:layout_marginEnd="50dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtUserPassword">
 
             <Switch
+                android:id="@+id/swsRememberMe"
                 style="@style/Custom.Widget.SwitchCompat"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="10dp" />
-
+                android:layout_marginEnd="10dp"
+                android:minWidth="48dp"
+                android:minHeight="48dp"
+                tools:ignore="UseSwitchCompatOrMaterialXml" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="20dp"
-                android:textSize="@dimen/text15"
-                android:text="@string/remember_me_login"/>
+                android:text="@string/remember_me_login"
+                android:textSize="@dimen/text15" />
 
             <TextView
-                android:layout_width="wrap_content"
+                android:id="@+id/txtForgetPassword"
+                android:layout_width="130dp"
                 android:layout_height="wrap_content"
                 android:text="@string/forgot_password_login"
-                android:textColor="@color/primary"
+                android:textColor="#00838F"
                 android:textSize="@dimen/text15" />
 
         </LinearLayout>
 
         <Button
             android:id="@+id/btnLogin"
-            android:layout_width="match_parent"
-            android:layout_height="45dp"
-            android:layout_marginStart="50dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="50dp"
+            android:layout_width="300dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="30dp"
             android:background="@drawable/bg_button_shape_corner_round"
             android:text="@string/log_in_button"
             android:textAllCaps="false"
             android:textColor="@color/white"
-            android:textStyle="bold"
-            android:textSize="@dimen/text25" />
+            android:textSize="@dimen/text25"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout7" />
 
         <Button
             android:id="@+id/btnSingUpNav"
-            android:layout_width="match_parent"
-            android:layout_height="45dp"
+            android:layout_width="300dp"
+            android:layout_height="48dp"
             android:layout_marginStart="50dp"
             android:layout_marginTop="20dp"
             android:layout_marginEnd="50dp"
             android:background="@drawable/bg_button_shave_white_round"
             android:text="@string/sign_up_button"
             android:textAllCaps="false"
-            android:textColor="@color/primary"
-            android:textSize="@dimen/text20" />
+            android:textColor="#78909C"
+            android:textSize="@dimen/text20"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnLogin"
+            tools:ignore="TextContrastCheck" />
 
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom"
-        android:gravity="center"
-        android:orientation="horizontal"
-        android:layout_margin="5dp"
-        app:layout_constraintBottom_toBottomOf="@+id/linearLayout"
-        tools:layout_editor_absoluteX="50dp">
-
-        <ImageButton
-            android:id="@+id/iconFb"
-            android:layout_width="wrap_content"
+        <include
+            layout="@layout/layout_footer_link"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_facebook_square"
-            android:contentDescription="@string/facebook_icon" />
+            android:layout_margin="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
 
-        <ImageButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic__twitter_square"
-            android:contentDescription="@string/twitter_icon" />
+        <include
+            android:visibility="gone"
+            android:id="@+id/loader"
+            layout="@layout/layout_loader"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-        <ImageButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_youtube"
-            android:contentDescription="@string/youtube_icon" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <ImageButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_linkedin"
-            android:contentDescription="@string/linkdin_icon" />
-
-    </LinearLayout>
-
-
-</android.support.constraint.ConstraintLayout>
+</ScrollView>

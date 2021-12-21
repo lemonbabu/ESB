@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:screenOrientation="portrait"
+    tools:context=".ui.main.view.fragment.SuccessFullyEnrolledFragment">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal"
+            tools:ignore="UseCompoundDrawables">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:src="@drawable/ic_success"
+                android:contentDescription="@string/successfully" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/successfully"
+                android:textColor="@color/primary"
+                android:textStyle="bold"
+                android:textSize="@dimen/text30"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:textAlignment="center"
+                android:textStyle="bold"
+                android:text="@string/you_are_done_to_enrolled_this_book"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text20"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textAlignment="center"
+                android:text="@string/now_you_can_access_the_video_topics"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text15"/>
+
+            <Button
+                android:id="@+id/btnGoCourse"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="70dp"
+                android:layout_marginEnd="70dp"
+                android:layout_marginTop="100dp"
+                android:text="@string/btn_text_get_this_course"
+                android:background="@drawable/bg_button_shape_corner_round"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text20"
+                android:textStyle="bold"
+                android:textAllCaps="false"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

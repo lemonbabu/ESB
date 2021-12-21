@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="140dp"
+    android:theme="@style/Theme.AppCompat.Light"
+    app:cardCornerRadius="10dp"
+    app:cardElevation="1dp"
+    app:cardUseCompatPadding="true"
+    android:layout_height="220dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="10dp">
+
+        <ImageView
+            android:id="@+id/imgBookCover"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:src="@drawable/img_book_cover"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:contentDescription="@string/books_cover" />
+
+        <TextView
+            android:id="@+id/txtBookTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/your_books"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imgBookCover" />
+
+
+        <TextView
+            android:id="@+id/txtBookPrice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/your_books"
+            android:maxLines="1"
+            android:textSize="12sp"
+            android:textColor="@color/primary"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtBookTitle"
+            tools:ignore="TextContrastCheck" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

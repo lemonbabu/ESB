@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="75dp">
+
+    <LinearLayout
+        android:id="@+id/titleBarHeading"
+        android:layout_width="300dp"
+        android:layout_height="match_parent"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp">
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="5dp"
+            android:contentDescription="@string/app_bar_home_button"
+            android:src="@drawable/logo_esb" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/engineering"
+                android:textColor="@color/primary"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                tools:ignore="RelativeOverlap" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="2dp"
+                android:text="@string/smart_book"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <ImageButton
+        android:id="@+id/btnBackMenu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="15dp"
+        android:background="@null"
+        android:contentDescription="@string/app_name"
+        android:minWidth="48dp"
+        android:minHeight="48dp"
+        android:src="@drawable/ic_arrow_round_back"
+        tools:ignore="DuplicateSpeakableTextCheck,TouchTargetSizeCheck" />
+
+    <ImageButton
+        android:id="@+id/btnNotificationsMenu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="30dp"
+        android:background="@null"
+        android:contentDescription="@string/app_name"
+        android:minWidth="48dp"
+        android:minHeight="48dp"
+        android:src="@drawable/ic_notifications"
+        tools:ignore="TouchTargetSizeCheck" />
+
+
+</RelativeLayout>

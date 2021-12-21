@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:orientation="horizontal"
+    android:layout_margin="10dp"
+    android:layout_gravity="bottom">
+
+    <ImageButton
+        android:id="@+id/iconFb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="15dp"
+        android:src="@drawable/ic_facebook_square"
+        android:background="@null"
+        android:contentDescription="@string/facebook_icon" />
+
+    <ImageButton
+        android:id="@+id/iconTwitter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="15dp"
+        android:src="@drawable/ic__twitter_square"
+        android:background="@null"
+        android:contentDescription="@string/twitter_icon" />
+
+    <ImageButton
+        android:id="@+id/iconYoutube"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="15dp"
+        android:src="@drawable/ic_youtube"
+        android:background="@null"
+        android:contentDescription="@string/youtube_icon" />
+
+    <ImageButton
+        android:id="@+id/iconLink"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_linkedin"
+        android:background="@null"
+        android:contentDescription="@string/linkdin_icon" />
+
+
+</LinearLayout>

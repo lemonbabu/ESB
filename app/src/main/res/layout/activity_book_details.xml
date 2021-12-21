@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ui.main.view.activities.BookDetails">
+
+    <RelativeLayout
+        android:id="@+id/header"
+        android:layout_width="fill_parent"
+        android:layout_height="69dp"
+        android:layout_alignParentTop="true">
+
+        <include
+            android:id="@+id/layoutHeader"
+            layout="@layout/layout_title_bar" />
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@+id/header"
+        android:fillViewport="true" >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/imgBooksCover"
+                android:layout_width="match_parent"
+                android:layout_height="230dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:contentDescription="@string/logo_esb"
+                android:src="@drawable/img_book_cover"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/txtBookTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="20dp"
+                android:text="@string/your_books"
+                android:textSize="23sp"
+                android:maxLines="1"
+                android:ellipsize="end"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imgBooksCover"/>
+
+
+            <RelativeLayout
+                android:id="@+id/linearLayout0"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtBookTitle">
+
+                <TextView
+                    android:layout_width="15dp"
+                    android:layout_height="40dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="20dp"
+                    android:text="@string/taka"
+                    android:textColor="@color/primary"
+                    android:textSize="@dimen/text20"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/txtBookPrice"
+                    android:layout_width="150dp"
+                    android:layout_height="40dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginStart="17dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="20dp"
+                    android:text="@string/_460"
+                    android:textColor="@color/primary"
+                    android:textSize="@dimen/text20"
+                    android:textStyle="bold" />
+
+
+                <Button
+                    android:id="@+id/txtBookDiscount"
+                    android:layout_width="120dp"
+                    android:layout_height="48dp"
+                    android:layout_alignParentEnd="true"
+                    android:background="@drawable/bg_button_shape_corner_round"
+                    android:text="@string/_4"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text20"
+                    android:textStyle="bold" />
+
+            </RelativeLayout>
+
+
+            <LinearLayout
+                android:id="@+id/linearLayout2"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout0">
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="48dp"
+                    android:layout_marginEnd="10dp"
+                    android:contentDescription="@string/your_books"
+                    android:src="@drawable/ic_user_image"
+                    tools:ignore="ImageContrastCheck,ImageContrastCheck,ImageContrastCheck" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="20dp"
+                    android:layout_gravity="center_vertical"
+                    android:textSize="@dimen/text18"
+                    android:text="@string/no_of_sold"/>
+
+                <TextView
+                    android:id="@+id/txtBookSold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginEnd="10dp"
+                    android:textSize="@dimen/text18"
+                    android:textColor="@color/black"
+                    android:text="@string/_40"/>
+
+                <!--
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginEnd="10dp"
+                    android:src="@drawable/ic_time_watch"
+                    android:contentDescription="@string/your_books" />
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="10dp"
+                        android:textSize="@dimen/text18"
+                        android:text="@string/total_time"/>
+
+                    <TextView
+                        android:id="@+id/txtBookDuration"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="10dp"
+                        android:textSize="@dimen/text18"
+                        android:textAlignment="center"
+                        android:text="@string/_40"/>
+                </LinearLayout>
+                -->
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:id="@+id/linearLayout3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
+
+                <TextView
+                    android:id="@+id/bookDescriptionTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginStart="18dp"
+                    android:text="@string/book_description"
+                    android:textAlignment="viewStart"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/txtBookDescription"
+                    android:layout_below="@+id/bookDescriptionTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:text="@string/store"
+                    android:textSize="15sp"
+                    android:textAlignment="viewStart" />
+
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/linearLayout4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout3">
+
+                <TextView
+                    android:id="@+id/contentTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginStart="18dp"
+                    android:text="@string/book_description"
+                    android:textAlignment="viewStart"
+                    android:textSize="20sp" />
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvContent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/contentTitle"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginBottom="10dp"
+                    tools:listitem="@layout/layout_content_item" />
+
+            </RelativeLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+    <RelativeLayout
+        android:id="@+id/footer"
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:background="@null"
+        android:layout_marginBottom="10dp"
+        android:layout_alignParentBottom="true">
+
+        <Button
+            android:id="@+id/btnOrderNow"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:text="@string/order_now"
+            android:textSize="@dimen/text18"
+            android:textStyle="bold"
+            android:textColor="@color/primary"
+            android:background="@drawable/bg_white_round"
+            android:layout_alignParentStart="true"/>
+
+        <Button
+            android:id="@+id/btnGetAccess"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:text="@string/get_access"
+            android:textSize="@dimen/text18"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:background="@drawable/bg_button_shape_corner_round"
+            android:layout_alignParentEnd="true"/>
+
+    </RelativeLayout>
+
+    <include
+        android:visibility="gone"
+        android:id="@+id/loader"
+        layout="@layout/layout_loader"/>
+
+
+</RelativeLayout>
