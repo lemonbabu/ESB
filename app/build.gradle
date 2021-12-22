@@ -12,12 +12,21 @@ android {
         applicationId "com.texon.engineeringsmartbook"
         minSdk 20
         targetSdk 31
-        versionCode 6
-        versionName "1.0.5"
+        versionCode 7
+        versionName "1.1.0"
 
         multiDexEnabled true
 
         testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
+    }
+
+    signingConfigs {
+        release {
+            storeFile file('Same locaiton')
+            storePassword '123456'
+            keyAlias 'key()'
+            keyPassword '123456'
+        }
     }
 
     buildFeatures{

@@ -1,10 +1,12 @@
 package com.texon.engineeringsmartbook.ui.main.view.auth
 
+import android.annotation.SuppressLint
 import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.content.Intent
 import android.os.CountDownTimer
+import android.provider.Settings
 import android.view.View
 import android.widget.Toast
 import com.texon.engineeringsmartbook.databinding.ActivityOtpVerifyBinding
@@ -43,6 +45,7 @@ class OtpVerify : AppCompatActivity() {
         } else{
             phone = flg.toString()
         }
+        @SuppressLint("HardwareIds") val androidID = Settings.Secure.getString(applicationContext.contentResolver, Settings.Secure.ANDROID_ID)
 
 
         val countDownTimer = object : CountDownTimer(60000L, 1000) {

@@ -3,116 +3,27 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/Lemon/Music/ESB/app/src/main/res/drawable-v24/ic_hide.xml" value="0.1618421052631579" />
-        <entry key="..\:/Users/Lemon/Music/ESB/app/src/main/res/drawable-v24/ic_home_primary.xml" value="0.28854166666666664" />
-        <entry key="..\:/Users/Lemon/Music/ESB/app/src/main/res/drawable-v24/ic_home_primary_color.xml" value="0.37864583333333335" />
-        <entry key="..\:/Users/Lemon/Music/ESB/app/src/main/res/drawable-v24/ic_launcher_background.xml" value="0.2890625" />
         <entry key="..\:/Users/Lemon/Music/ESB/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.3296296296296296" />
-        <entry key="..\:/Users/Lemon/Music/ESB/app/src/main/res/drawable-v24/ic_user_profile_primary_color.xml" value="0.37864583333333335" />
         <entry key="..\:/Users/Lemon/Music/ESB/app/src/main/res/drawable-v24/new_foreground.xml" value="0.21875" />
         <entry key="..\:/Users/Lemon/Music/ESB/app/src/main/res/drawable/bg_button_shape_corner_round.xml" value="0.21875" />
         <entry key="..\:/Users/Lemon/Music/ESB/app/src/main/res/drawable/bg_button_shave_white_round.xml" value="0.37864583333333335" />
-        <entry key="..\:/Users/Lemon/Music/ESB/app/src/main/res/drawable/bg_rectangle_ash.xml" value="0.37864583333333335" />
-        <entry key="..\:/Users/Lemon/Music/ESB/app/src/main/res/drawable/bg_rectangle_light_round.xml" value="0.30520833333333336" />
         <entry key="..\:/Users/Lemon/Music/ESB/app/src/main/res/drawable/bg_while_round.xml" value="0.23914473684210527" />
-        <entry key="..\:/Users/Lemon/Music/ESB/app/src/main/res/drawable/bg_white_rectangle.xml" value="0.31197916666666664" />
-        <entry key="..\:/Users/Lemon/Music/ESB/app/src/main/res/drawable/bg_white_round.xml" value="0.31197916666666664" />
-        <entry key="..\:/Users/Lemon/Music/ESB/app/src/main/res/drawable/ic__twitter_square.xml" value="0.28802083333333334" />
-        <entry key="..\:/Users/Lemon/Music/ESB/app/src/main/res/drawable/ic_arrow_forward.xml" value="0.18289473684210528" />
-        <entry key="..\:/Users/Lemon/Music/ESB/app/src/main/res/drawable/ic_arrow_round_back.xml" value="0.31197916666666664" />
-        <entry key="..\:/Users/Lemon/Music/ESB/app/src/main/res/drawable/ic_awesome_phone_alt.xml" value="0.31197916666666664" />
-        <entry key="..\:/Users/Lemon/Music/ESB/app/src/main/res/drawable/ic_awesome_user_alt.xml" value="0.18289473684210528" />
-        <entry key="..\:/Users/Lemon/Music/ESB/app/src/main/res/drawable/ic_baseline_play_circle_outline_24.xml" value="0.29583333333333334" />
-        <entry key="..\:/Users/Lemon/Music/ESB/app/src/main/res/drawable/ic_books_button.xml" value="0.37864583333333335" />
-        <entry key="..\:/Users/Lemon/Music/ESB/app/src/main/res/drawable/ic_books_button_bg.xml" value="0.18289473684210528" />
-        <entry key="..\:/Users/Lemon/Music/ESB/app/src/main/res/drawable/ic_circle_white.xml" value="0.30104166666666665" />
-        <entry key="..\:/Users/Lemon/Music/ESB/app/src/main/res/drawable/ic_facebook_square.xml" value="0.18289473684210528" />
-        <entry key="..\:/Users/Lemon/Music/ESB/app/src/main/res/drawable/ic_group_29.xml" value="0.37864583333333335" />
-        <entry key="..\:/Users/Lemon/Music/ESB/app/src/main/res/drawable/ic_help.xml" value="0.37864583333333335" />
-        <entry key="..\:/Users/Lemon/Music/ESB/app/src/main/res/drawable/ic_helps.xml" value="0.37864583333333335" />
-        <entry key="..\:/Users/Lemon/Music/ESB/app/src/main/res/drawable/ic_home.xml" value="0.31197916666666664" />
         <entry key="..\:/Users/Lemon/Music/ESB/app/src/main/res/drawable/ic_launcher_background.xml" value="0.21875" />
-        <entry key="..\:/Users/Lemon/Music/ESB/app/src/main/res/drawable/ic_line.xml" value="0.37864583333333335" />
-        <entry key="..\:/Users/Lemon/Music/ESB/app/src/main/res/drawable/ic_linkedin.xml" value="0.18289473684210528" />
-        <entry key="..\:/Users/Lemon/Music/ESB/app/src/main/res/drawable/ic_logout.xml" value="0.18289473684210528" />
-        <entry key="..\:/Users/Lemon/Music/ESB/app/src/main/res/drawable/ic_material_lock.xml" value="0.18289473684210528" />
-        <entry key="..\:/Users/Lemon/Music/ESB/app/src/main/res/drawable/ic_material_mail.xml" value="0.18289473684210528" />
-        <entry key="..\:/Users/Lemon/Music/ESB/app/src/main/res/drawable/ic_notifications.xml" value="0.31197916666666664" />
-        <entry key="..\:/Users/Lemon/Music/ESB/app/src/main/res/drawable/ic_orders.xml" value="0.37864583333333335" />
-        <entry key="..\:/Users/Lemon/Music/ESB/app/src/main/res/drawable/ic_qu_mark.xml" value="0.18289473684210528" />
-        <entry key="..\:/Users/Lemon/Music/ESB/app/src/main/res/drawable/ic_rectangle_light_round.xml" value="0.30520833333333336" />
-        <entry key="..\:/Users/Lemon/Music/ESB/app/src/main/res/drawable/ic_scan_home.xml" value="0.31197916666666664" />
-        <entry key="..\:/Users/Lemon/Music/ESB/app/src/main/res/drawable/ic_success.xml" value="0.31197916666666664" />
-        <entry key="..\:/Users/Lemon/Music/ESB/app/src/main/res/drawable/ic_success_mark.xml" value="0.18289473684210528" />
-        <entry key="..\:/Users/Lemon/Music/ESB/app/src/main/res/drawable/ic_time_watch.xml" value="0.18289473684210528" />
-        <entry key="..\:/Users/Lemon/Music/ESB/app/src/main/res/drawable/ic_timer_watch.xml" value="0.18289473684210528" />
-        <entry key="..\:/Users/Lemon/Music/ESB/app/src/main/res/drawable/ic_user_image.xml" value="0.18289473684210528" />
-        <entry key="..\:/Users/Lemon/Music/ESB/app/src/main/res/drawable/ic_user_profile.xml" value="0.30520833333333336" />
-        <entry key="..\:/Users/Lemon/Music/ESB/app/src/main/res/drawable/ic_user_profile_primary_color.xml" value="0.1375" />
-        <entry key="..\:/Users/Lemon/Music/ESB/app/src/main/res/drawable/ic_youtube.xml" value="0.18289473684210528" />
         <entry key="..\:/Users/Lemon/Music/ESB/app/src/main/res/drawable/img_splash_girl_with_books.xml" value="0.21875" />
         <entry key="..\:/Users/Lemon/Music/ESB/app/src/main/res/drawable/new_background.xml" value="0.27870370370370373" />
-        <entry key="..\:/Users/Lemon/Music/ESB/app/src/main/res/drawable/ng_white_rectangle.xml" value="0.31197916666666664" />
-        <entry key="..\:/Users/Lemon/Music/ESB/app/src/main/res/layout-v21/activity_player.xml" value="0.3625" />
-        <entry key="..\:/Users/Lemon/Music/ESB/app/src/main/res/layout/activity_address_confirmation.xml" value="0.3484375" />
-        <entry key="..\:/Users/Lemon/Music/ESB/app/src/main/res/layout/activity_book_details.xml" value="0.33" />
-        <entry key="..\:/Users/Lemon/Music/ESB/app/src/main/res/layout/activity_book_enrollment.xml" value="0.3484375" />
-        <entry key="..\:/Users/Lemon/Music/ESB/app/src/main/res/layout/activity_change_password.xml" value="0.2875" />
-        <entry key="..\:/Users/Lemon/Music/ESB/app/src/main/res/layout/activity_custom_player.xml" value="0.15526315789473685" />
-        <entry key="..\:/Users/Lemon/Music/ESB/app/src/main/res/layout/activity_dashboard.xml" value="0.1983695652173913" />
-        <entry key="..\:/Users/Lemon/Music/ESB/app/src/main/res/layout/activity_exo_player.xml" value="0.1" />
-        <entry key="..\:/Users/Lemon/Music/ESB/app/src/main/res/layout/activity_fogot_password.xml" value="0.35054347826086957" />
-        <entry key="..\:/Users/Lemon/Music/ESB/app/src/main/res/layout/activity_login.xml" value="0.22" />
-        <entry key="..\:/Users/Lemon/Music/ESB/app/src/main/res/layout/activity_main.xml" value="0.25" />
-        <entry key="..\:/Users/Lemon/Music/ESB/app/src/main/res/layout/activity_otp_verify.xml" value="0.25" />
-        <entry key="..\:/Users/Lemon/Music/ESB/app/src/main/res/layout/activity_payment_method.xml" value="0.28020833333333334" />
-        <entry key="..\:/Users/Lemon/Music/ESB/app/src/main/res/layout/activity_player.xml" value="0.14671052631578949" />
-        <entry key="..\:/Users/Lemon/Music/ESB/app/src/main/res/layout/activity_scanner.xml" value="0.2703125" />
-        <entry key="..\:/Users/Lemon/Music/ESB/app/src/main/res/layout/activity_sign_up.xml" value="0.25" />
+        <entry key="..\:/Users/Lemon/Music/ESB/app/src/main/res/layout/activity_login.xml" value="0.33" />
+        <entry key="..\:/Users/Lemon/Music/ESB/app/src/main/res/layout/activity_main.xml" value="0.33" />
+        <entry key="..\:/Users/Lemon/Music/ESB/app/src/main/res/layout/activity_otp_verify.xml" value="0.3484375" />
+        <entry key="..\:/Users/Lemon/Music/ESB/app/src/main/res/layout/activity_sign_up.xml" value="0.33" />
         <entry key="..\:/Users/Lemon/Music/ESB/app/src/main/res/layout/activity_splash_screen.xml" value="0.25" />
-        <entry key="..\:/Users/Lemon/Music/ESB/app/src/main/res/layout/activity_successfully_enrolled.xml" value="0.29583333333333334" />
-        <entry key="..\:/Users/Lemon/Music/ESB/app/src/main/res/layout/activity_user_profile.xml" value="0.28489583333333335" />
-        <entry key="..\:/Users/Lemon/Music/ESB/app/src/main/res/layout/activity_video_player.xml" value="0.18" />
-        <entry key="..\:/Users/Lemon/Music/ESB/app/src/main/res/layout/activity_video_player2.xml" value="0.22" />
-        <entry key="..\:/Users/Lemon/Music/ESB/app/src/main/res/layout/activity_youtube.xml" value="0.22894736842105262" />
-        <entry key="..\:/Users/Lemon/Music/ESB/app/src/main/res/layout/app_bar.xml" value="0.33" />
-        <entry key="..\:/Users/Lemon/Music/ESB/app/src/main/res/layout/book_card_view.xml" value="0.28177083333333336" />
-        <entry key="..\:/Users/Lemon/Music/ESB/app/src/main/res/layout/book_cover_title_card.xml" value="0.28020833333333334" />
-        <entry key="..\:/Users/Lemon/Music/ESB/app/src/main/res/layout/book_details_specifications.xml" value="0.3625" />
-        <entry key="..\:/Users/Lemon/Music/ESB/app/src/main/res/layout/card__get_address.xml" value="0.3625" />
-        <entry key="..\:/Users/Lemon/Music/ESB/app/src/main/res/layout/card_book__view.xml" value="0.3625" />
-        <entry key="..\:/Users/Lemon/Music/ESB/app/src/main/res/layout/card_book_cover_title.xml" value="0.22" />
-        <entry key="..\:/Users/Lemon/Music/ESB/app/src/main/res/layout/card_book_details_specifications.xml" value="0.34692028985507245" />
-        <entry key="..\:/Users/Lemon/Music/ESB/app/src/main/res/layout/card_book_view.xml" value="0.23867753623188406" />
-        <entry key="..\:/Users/Lemon/Music/ESB/app/src/main/res/layout/card_get_address.xml" value="0.28020833333333334" />
-        <entry key="..\:/Users/Lemon/Music/ESB/app/src/main/res/layout/card_payment_method_inforamtions.xml" value="0.28020833333333334" />
-        <entry key="..\:/Users/Lemon/Music/ESB/app/src/main/res/layout/card_payment_method_information.xml" value="0.25" />
-        <entry key="..\:/Users/Lemon/Music/ESB/app/src/main/res/layout/content_change_password.xml" value="0.2875" />
-        <entry key="..\:/Users/Lemon/Music/ESB/app/src/main/res/layout/exo_playback_control_view.xml" value="0.25" />
-        <entry key="..\:/Users/Lemon/Music/ESB/app/src/main/res/layout/exo_simple_player_view.xml" value="0.22894736842105262" />
-        <entry key="..\:/Users/Lemon/Music/ESB/app/src/main/res/layout/fragment_book_access.xml" value="0.33" />
-        <entry key="..\:/Users/Lemon/Music/ESB/app/src/main/res/layout/fragment_book_profile.xml" value="0.22" />
-        <entry key="..\:/Users/Lemon/Music/ESB/app/src/main/res/layout/fragment_confirm_order.xml" value="0.29635416666666664" />
-        <entry key="..\:/Users/Lemon/Music/ESB/app/src/main/res/layout/fragment_dashboard.xml" value="0.22" />
-        <entry key="..\:/Users/Lemon/Music/ESB/app/src/main/res/layout/fragment_first.xml" value="0.34692028985507245" />
-        <entry key="..\:/Users/Lemon/Music/ESB/app/src/main/res/layout/fragment_pay_method.xml" value="0.348731884057971" />
-        <entry key="..\:/Users/Lemon/Music/ESB/app/src/main/res/layout/fragment_player.xml" value="0.2" />
-        <entry key="..\:/Users/Lemon/Music/ESB/app/src/main/res/layout/fragment_profile.xml" value="0.25" />
-        <entry key="..\:/Users/Lemon/Music/ESB/app/src/main/res/layout/fragment_profile_update.xml" value="0.25" />
-        <entry key="..\:/Users/Lemon/Music/ESB/app/src/main/res/layout/fragment_second.xml" value="0.34692028985507245" />
-        <entry key="..\:/Users/Lemon/Music/ESB/app/src/main/res/layout/fragment_success_fully_enrolled.xml" value="0.25" />
-        <entry key="..\:/Users/Lemon/Music/ESB/app/src/main/res/layout/fragment_update_password.xml" value="0.25" />
-        <entry key="..\:/Users/Lemon/Music/ESB/app/src/main/res/layout/layout_app_bar.xml" value="0.3625" />
-        <entry key="..\:/Users/Lemon/Music/ESB/app/src/main/res/layout/layout_content_item.xml" value="0.3098958333333333" />
-        <entry key="..\:/Users/Lemon/Music/ESB/app/src/main/res/layout/layout_footer_link.xml" value="0.34692028985507245" />
-        <entry key="..\:/Users/Lemon/Music/ESB/app/src/main/res/layout/layout_fotter_link.xml" value="0.3625" />
-        <entry key="..\:/Users/Lemon/Music/ESB/app/src/main/res/layout/layout_loader.xml" value="0.3625" />
-        <entry key="..\:/Users/Lemon/Music/ESB/app/src/main/res/layout/layout_slider_image_holder.xml" value="0.3625" />
-        <entry key="..\:/Users/Lemon/Music/ESB/app/src/main/res/layout/layout_splash_screen.xml" value="0.33" />
-        <entry key="..\:/Users/Lemon/Music/ESB/app/src/main/res/layout/layout_title_bar.xml" value="0.33" />
-        <entry key="..\:/Users/Lemon/Music/ESB/app/src/main/res/layout/title_bar.xml" value="0.29583333333333334" />
-        <entry key="..\:/Users/Lemon/Music/ESB/app/src/main/res/layout/video_player.xml" value="0.1" />
-        <entry key="..\:/Users/Lemon/Music/ESB/app/src/main/res/layout/viewed_video_items_.xml" value="0.3625" />
+        <entry key="..\:/Users/Lemon/Music/ESB/app/src/main/res/layout/fragment_book_profile.xml" value="0.13956433637284701" />
+        <entry key="..\:/Users/Lemon/Music/ESB/app/src/main/res/layout/layout_book_topics_child_item.xml" value="0.2869791666666667" />
+        <entry key="..\:/Users/Lemon/Music/ESB/app/src/main/res/layout/layout_book_topics_item.xml" value="0.32608695652173914" />
+        <entry key="..\:/Users/Lemon/Music/ESB/app/src/main/res/layout/layout_content_item.xml" value="0.13956433637284701" />
+        <entry key="..\:/Users/Lemon/Music/ESB/app/src/main/res/layout/layout_loader.xml" value="0.1762917933130699" />
+        <entry key="..\:/Users/Lemon/Music/ESB/app/src/main/res/layout/layout_slider_image_holder.xml" value="0.1762917933130699" />
+        <entry key="..\:/Users/Lemon/Music/ESB/app/src/main/res/layout/layout_splash_screen.xml" value="0.1762917933130699" />
+        <entry key="..\:/Users/Lemon/Music/ESB/app/src/main/res/layout/viewed_video_items_.xml" value="0.1762917933130699" />
         <entry key="..\:/Users/Lemon/Music/ESB/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.37864583333333335" />
         <entry key="..\:/Users/Lemon/Music/ESB/app/src/main/res/mipmap-anydpi-v26/new.xml" value="0.21875" />
         <entry key="..\:/Users/Lemon/Music/ESB/app/src/main/res/mipmap-anydpi-v26/new_round.xml" value="0.21875" />
@@ -124,12 +35,5 @@
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
-  </component>
-  <component name="VisualizationToolProject">
-    <option name="state">
-      <ProjectState>
-        <option name="scale" value="0.3625" />
-      </ProjectState>
-    </option>
   </component>
 </project>

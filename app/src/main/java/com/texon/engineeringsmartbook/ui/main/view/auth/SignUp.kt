@@ -1,9 +1,11 @@
 package com.texon.engineeringsmartbook.ui.main.view.auth
 
+import android.annotation.SuppressLint
 import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.content.Intent
+import android.provider.Settings
 import android.view.View
 import android.widget.Toast
 import com.texon.engineeringsmartbook.databinding.ActivitySignUpBinding
@@ -34,6 +36,7 @@ class SignUp : AppCompatActivity() {
         setContentView(binding.root)
 
         getData()
+
 
 
         binding.btnLoginNav.setOnClickListener {

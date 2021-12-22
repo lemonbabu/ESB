@@ -1,11 +1,13 @@
 package com.texon.engineeringsmartbook.ui.main.view.auth
 
+import android.annotation.SuppressLint
 import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.content.Intent
 import android.content.DialogInterface
 import android.content.SharedPreferences
+import android.provider.Settings
 import android.util.Log
 import android.view.View
 import android.widget.Toast
@@ -18,6 +20,7 @@ import kotlinx.android.synthetic.main.activity_login.*
 import kotlinx.android.synthetic.main.layout_loader.view.*
 import kotlinx.coroutines.*
 import retrofit2.awaitResponse
+import java.security.AccessController.getContext
 
 @DelicateCoroutinesApi
 class Login : AppCompatActivity() {
@@ -32,6 +35,9 @@ class Login : AppCompatActivity() {
 
         checkSession()
         binding.loader.progressBar.visibility = View.GONE
+
+        @SuppressLint("HardwareIds") val androidID = Settings.Secure.getString(applicationContext.contentResolver, Settings.Secure.ANDROID_ID)
+        // Toast.makeText(applicationContext, androidID, Toast.LENGTH_LONG).show()
 
         binding.btnSingUpNav.setOnClickListener {
             binding.btnSingUpNav.isClickable = false
@@ -69,7 +75,7 @@ class Login : AppCompatActivity() {
             binding.btnLogin.isClickable = false
             binding.loader.progressBar.visibility = View.VISIBLE
             try {
-                login(phone, password)
+                login(phone, password, androidID)
             }catch (e: Exception){
                 Log.d("Login=", "coroutine scope error")
             }
@@ -91,10 +97,10 @@ class Login : AppCompatActivity() {
 
 
 
-    private fun login(phone: String, password: String){
+    private fun login(phone: String, password: String, mac: String){
         GlobalScope.launch(Dispatchers.IO){
             try {
-                val response = loginApi.userLogin(phone, password, "DeviceName")
+                val response = loginApi.userLogin(phone, password, mac)
                 if(response.isSuccessful){
                     withContext(Dispatchers.Main){
                         response.body()?.success.let {

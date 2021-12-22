@@ -1,11 +1,14 @@
 package com.texon.engineeringsmartbook.ui.main.view
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
+import android.provider.Settings
 import android.view.View
 import android.view.WindowManager
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.squareup.picasso.Picasso
@@ -36,6 +39,7 @@ class MainActivity : AppCompatActivity(), FragmentCommunicator {
         window.setFlags(
             WindowManager.LayoutParams.FLAG_FULLSCREEN,
             WindowManager.LayoutParams.FLAG_FULLSCREEN)
+
 
 //        val wifiManager = applicationContext.getSystemService(WIFI_SERVICE) as WifiManager
 //        val mac = wifiManager.connectionInfo.macAddress

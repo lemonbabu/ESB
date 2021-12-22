@@ -1,6 +1,5 @@
 package com.texon.engineeringsmartbook.data.api
 
-import com.google.gson.Gson
 import com.texon.engineeringsmartbook.data.model.*
 import com.texon.engineeringsmartbook.data.model.booksModel.AllBooksDataModel
 import com.texon.engineeringsmartbook.data.model.booksModel.BookAccessBySerial

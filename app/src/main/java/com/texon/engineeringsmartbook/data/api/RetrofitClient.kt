@@ -166,5 +166,23 @@ object RetrofitClient {
         return retrofit.create(ApiInterfaces.ConfirmOrderInterface::class.java)
     }
 
+    //retrofit builder for Book Dashboard
+    fun getBookDashboard(): BooksApiInterfaces.BooksDashboardInterface {
+        val retrofit: Retrofit = Retrofit.Builder()
+            .baseUrl(URL)
+            .addConverterFactory(GsonConverterFactory.create(gson))
+            .build()
+        return retrofit.create(BooksApiInterfaces.BooksDashboardInterface::class.java)
+    }
+
+    //retrofit builder for Topic Access
+    fun getTopicAccess(): BooksApiInterfaces.TopicAccessInterface {
+        val retrofit: Retrofit = Retrofit.Builder()
+            .baseUrl(URL)
+            .addConverterFactory(GsonConverterFactory.create(gson))
+            .build()
+        return retrofit.create(BooksApiInterfaces.TopicAccessInterface::class.java)
+    }
+
 
 }
