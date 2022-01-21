@@ -1,13 +1,23 @@
 package com.texon.engineeringsmartbook.data.api
 
+import android.graphics.Bitmap
+import com.beust.klaxon.JsonObject
 import com.texon.engineeringsmartbook.data.model.*
 import com.texon.engineeringsmartbook.data.model.booksModel.AllBooksDataModel
 import com.texon.engineeringsmartbook.data.model.booksModel.BookAccessBySerial
 import com.texon.engineeringsmartbook.data.model.booksModel.BookDetailsDataModel
 import com.texon.engineeringsmartbook.data.model.booksModel.BookOrderConfirmationResponse
 import kotlinx.coroutines.DelicateCoroutinesApi
+import okhttp3.MultipartBody
+import okhttp3.ResponseBody
 import retrofit2.Call
 import retrofit2.http.*
+import retrofit2.http.Body
+
+import retrofit2.http.POST
+
+
+
 
 interface ApiInterfaces {
 
@@ -128,6 +138,7 @@ interface ApiInterfaces {
         ): Call<UpdateProfileResponse>
     }
 
+
     // Profile Update interface
     interface PasswordUpdateInterface{
         @FormUrlEncoded
@@ -150,7 +161,7 @@ interface ApiInterfaces {
             @Field("quantity") qun: Int,
             @Field("payment_method") payMethod: String,
             @Field("account_no") accountNo: String,
-            @Field("transaction_id") txId: String ,
+            @Field("transaction_id") txId: String,
             @Field("address") address: String,
             @Header("Authorization") auth: String,
         ): Call<BookOrderConfirmationResponse>

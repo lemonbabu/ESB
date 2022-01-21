@@ -8,6 +8,8 @@ import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.View
 import android.widget.Toast
+import com.beust.klaxon.Json
+import com.beust.klaxon.JsonObject
 import com.google.gson.Gson
 import com.squareup.picasso.Picasso
 import com.texon.engineeringsmartbook.R
@@ -17,6 +19,7 @@ import com.texon.engineeringsmartbook.databinding.FragmentConfirmOrderBinding
 import com.texon.engineeringsmartbook.ui.main.view.auth.Login
 import com.texon.engineeringsmartbook.ui.main.viewModel.FragmentCommunicator
 import kotlinx.coroutines.*
+import org.json.JSONObject
 import retrofit2.awaitResponse
 import java.lang.Exception
 
@@ -79,7 +82,8 @@ class ConfirmOrderFragment : Fragment(R.layout.fragment_confirm_order) {
                 return@setOnClickListener
             }
 
-            address = "{\"name\": $name \"phone\": $phn \"district\": $dis \"city\": $city \"address\": $ads}"
+            address = "{\"name\": \"$name\", \"phone\": \"$phn\", \"district\": \"$dis\", \"city\": \"$city\", \"address\": \"$ads\"}"
+
             binding.addressInfo.btnConfirmOrder.isClickable = false
             orderBook()
 
@@ -87,7 +91,6 @@ class ConfirmOrderFragment : Fragment(R.layout.fragment_confirm_order) {
         }
 
     }
-
 
     private fun loadProfile(){
         val sharedPreferences: SharedPreferences? = this.activity?.getSharedPreferences("BookAccess", Context.MODE_PRIVATE)
@@ -98,7 +101,7 @@ class ConfirmOrderFragment : Fragment(R.layout.fragment_confirm_order) {
             title = sharedPreferences.getString("title", "")!!
             txId = sharedPreferences.getString("txId", "")!!
             binding.bookInfo.txtBookTitle.text = title
-            Picasso.get().load(avatar).fit().into(binding.bookInfo.imgBookCover)
+            Picasso.get().load(avatar).into(binding.bookInfo.imgBookCover)
         }
     }
 
@@ -121,20 +124,21 @@ class ConfirmOrderFragment : Fragment(R.layout.fragment_confirm_order) {
     private fun orderBook(){
         GlobalScope.launch(Dispatchers.IO) {
             try {
+                Log.d("Book Order data", address)
                 val response = orderConfirmation.bookOrder(id.toInt(), 1, "bKash", actNo, txId, address, "Bearer $token").awaitResponse()
                 withContext(Dispatchers.Main){
                     if(response.body()?.success == true){
                         Toast.makeText( context,"Congratulation, Order is confirm.", Toast.LENGTH_SHORT).show()
+                        fc.passData("OrderConfirm", -1)
                     }
-                    Log.d("Book Order= " , response.toString())
+                    Log.d("Book Order res= " , response.message().toString())
                 }
             }catch (e: Exception) {
                 withContext(Dispatchers.Main) {
                     Toast.makeText( context,"Internet Connection is not stable!!", Toast.LENGTH_SHORT).show()
                 }
-                Log.d("Book Order= " , e.toString())
+                Log.d("Book Order ex= " , e.message.toString())
             }
-            Log.d("Book Order= " , "api calling")
             binding.addressInfo.btnConfirmOrder.isClickable = true
         }
     }

@@ -52,7 +52,7 @@
             android:background="@drawable/bg_button_shave_white_round"
             android:hint="@string/book_serial_number"
             android:importantForAutofill="no"
-            android:inputType="number"
+            android:inputType="text"
             android:textAlignment="center"
             tools:ignore="TextContrastCheck" />
 

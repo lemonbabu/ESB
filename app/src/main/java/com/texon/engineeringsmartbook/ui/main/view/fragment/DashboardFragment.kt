@@ -13,21 +13,24 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.texon.engineeringsmartbook.R
 import com.texon.engineeringsmartbook.databinding.FragmentDashboardBinding
 import com.texon.engineeringsmartbook.data.api.ApiInterfaces
+import com.texon.engineeringsmartbook.data.api.BooksApiInterfaces
 import com.texon.engineeringsmartbook.data.api.RetrofitClient
 import com.texon.engineeringsmartbook.data.model.DashboardData
 import com.texon.engineeringsmartbook.data.model.booksModel.AllBooksDataModel
-import com.texon.engineeringsmartbook.ui.main.adapter.AllBooksAdapter
-import com.texon.engineeringsmartbook.ui.main.adapter.YourBooksAdapter
-import com.texon.engineeringsmartbook.ui.main.adapter.SliderImageAdapter
+import com.texon.engineeringsmartbook.data.model.booksModel.BookDashboardData
+import com.texon.engineeringsmartbook.data.model.booksModel.TopicsContent
+import com.texon.engineeringsmartbook.ui.main.adapter.*
 import com.texon.engineeringsmartbook.ui.main.view.activities.BookDetails
+import com.texon.engineeringsmartbook.ui.main.view.activities.VideoPlayer
 import com.texon.engineeringsmartbook.ui.main.view.auth.Login
 import com.texon.engineeringsmartbook.ui.main.viewModel.FragmentCommunicator
+import kotlinx.android.synthetic.main.activity_sign_up.*
 import kotlinx.coroutines.*
 import retrofit2.awaitResponse
 import java.lang.Exception
 
 @DelicateCoroutinesApi
-class DashboardFragment : Fragment(R.layout.fragment_dashboard), YourBooksAdapter.OnYourBookClickListener, AllBooksAdapter.OnBookClickListener{
+class DashboardFragment : Fragment(R.layout.fragment_dashboard), YourBooksAdapter.OnYourBookClickListener, AllBooksAdapter.OnBookClickListener, RecentTopicsAdapter.OnTopicsClickListener{
 
     private lateinit var binding: FragmentDashboardBinding
     private lateinit var fc: FragmentCommunicator
@@ -35,8 +38,10 @@ class DashboardFragment : Fragment(R.layout.fragment_dashboard), YourBooksAdapte
     private val sliderImage: ApiInterfaces.SliderImageInterface by lazy { RetrofitClient.getSliderImage() }
     private val dashBoardData: ApiInterfaces.DashboardDataInterface by lazy { RetrofitClient.getDashboardData() }
     private val allBooks: ApiInterfaces.AllBooksDataInterface by lazy { RetrofitClient.getAllBooks() }
+    private val videoLink: BooksApiInterfaces.TopicAccessInterface by lazy { RetrofitClient.getTopicAccess() }
     private var booksData: DashboardData.Data? = null
     private lateinit var adapterYourBook : YourBooksAdapter
+    private lateinit var recentViewAdapter : RecentTopicsAdapter
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -48,6 +53,7 @@ class DashboardFragment : Fragment(R.layout.fragment_dashboard), YourBooksAdapte
         binding.loader.layoutLoader.visibility = View.VISIBLE
 
         loadProfile()
+        recentView()
 
         try {
             setImageInSlider()
@@ -80,6 +86,10 @@ class DashboardFragment : Fragment(R.layout.fragment_dashboard), YourBooksAdapte
                 binding.btnFreeVideo.setTextColor(Color.parseColor("#4B839A"))
                 binding.btnYourBooks.setTextColor(Color.parseColor("#232323"))
             }
+        }
+
+        binding.btnMenuHelp.setOnClickListener {
+            fc.passData("Help", 0)
         }
 
     }
@@ -177,6 +187,66 @@ class DashboardFragment : Fragment(R.layout.fragment_dashboard), YourBooksAdapte
         Log.d("Dashboard", token)
     }
 
+    private fun recentView(){
+
+        val sharedPreferences: SharedPreferences? = activity?.getSharedPreferences("RecentView", Context.MODE_PRIVATE)
+        val session = sharedPreferences?.getBoolean("session", false)
+        if(session == true){
+            val recentSet: MutableSet<String> = sharedPreferences.getStringSet("data", null) as MutableSet<String>
+
+            val topics: MutableList<BookDashboardData.Data.ChapterDetail.Topic> = ArrayList()
+//            topics.add(BookDashboardData.Data.ChapterDetail.Topic("https://engineeringsmartbook.com/storage/topics/dtMAXUETJo62uJ1BymIfZjLkvcnGndy8zoAoqtTr.png", "New topics", 105, "Busbar differential protection"))
+//            topics.add(BookDashboardData.Data.ChapterDetail.Topic("https://engineeringsmartbook.com/storage/topics/dtMAXUETJo62uJ1BymIfZjLkvcnGndy8zoAoqtTr.png", "New topics", 105, "Busbar differential protection"))
+//            topics.add(BookDashboardData.Data.ChapterDetail.Topic("https://engineeringsmartbook.com/storage/topics/dtMAXUETJo62uJ1BymIfZjLkvcnGndy8zoAoqtTr.png", "New topics", 105, "Busbar differential protection"))
+//            topics.add(BookDashboardData.Data.ChapterDetail.Topic("https://engineeringsmartbook.com/storage/topics/dtMAXUETJo62uJ1BymIfZjLkvcnGndy8zoAoqtTr.png", "New topics", 105, "Busbar differential protection"))
+
+            for (i in recentSet){
+
+                Log.d("Recent View= ", i)
+                val item  = i.split('œ')
+               // Log.d("Recent View Id= ", item[0])
+                topics.add(BookDashboardData.Data.ChapterDetail.Topic(item[1], "", item[0].toInt(), item[2]))
+            }
+//
+//            //Toast.makeText( context, rows.toString(), Toast.LENGTH_SHORT).show()
+            val linearLayoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
+            linearLayoutManager.reverseLayout = true
+            binding.rvRecentView.layoutManager = linearLayoutManager
+            recentViewAdapter = RecentTopicsAdapter(this)
+            recentViewAdapter.submitList(topics)
+            binding.rvRecentView.adapter = recentViewAdapter
+
+        }
+    }
+
+    private fun getLink(id: Int){
+        GlobalScope.launch(Dispatchers.IO) {
+            try {
+                val response = videoLink.topicData(id, "Bearer $token").awaitResponse()
+                withContext(Dispatchers.Main){
+                    if(response.isSuccessful){
+                        response.body()?.data?.let {
+                            //Toast.makeText(requireContext(),it.youtube_id, Toast.LENGTH_SHORT).show()
+                            val intent = Intent(requireContext(), VideoPlayer::class.java)
+                            intent.putExtra("link", it.youtube_id)
+                            startActivity(intent)
+                        }
+                        //Log.d("Book Profile", response.body()?.data.toString())
+                    }
+                }
+
+            }catch (e: Exception) {
+                Log.d("Error", e.message.toString())
+                withContext(Dispatchers.Main) {
+                    binding.loader.layoutLoader.visibility = View.GONE
+                    Toast.makeText( context,"Internet Connection is not stable!!", Toast.LENGTH_SHORT).show()
+                }
+            }
+        }
+        binding.loader.layoutLoader.visibility = View.GONE
+        //Log.d("Book Profile", "Loading book contain")
+    }
+
     override fun onBookClickListener(result: AllBooksDataModel.Data) {
         val intent = Intent(context, BookDetails::class.java)
         intent.putExtra("id", result.id)
@@ -186,6 +256,11 @@ class DashboardFragment : Fragment(R.layout.fragment_dashboard), YourBooksAdapte
 
     override fun onYourBookClickListener(result: DashboardData.Data.DashboardBookDataModel) {
         fc.passData("accessBook", result.id)
+    }
+
+    override fun onTopicsClickListener(id: Int) {
+        binding.loader.layoutLoader.visibility = View.VISIBLE
+        getLink(id)
     }
 
 }

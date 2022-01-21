@@ -121,7 +121,6 @@ class MainActivity : AppCompatActivity(), FragmentCommunicator {
     }
 
     private fun menuBookSuccessFullEnrollment(){
-        replaceFragment(SuccessFullyEnrolledFragment())
         binding.appBar.btnHomeMenu.setImageResource(R.drawable.ic_home)
         backPress = true
     }
@@ -152,6 +151,7 @@ class MainActivity : AppCompatActivity(), FragmentCommunicator {
         replaceFragment(ProfileFragment())
         binding.appBar.btnHomeMenu.setImageResource(R.drawable.ic_home)
         //binding.appBar.btnProfileMenu.setImageResource(R.drawable.ic_user_profile_primary_color)
+        loadProfilePic()
         backPress = true
     }
 
@@ -166,8 +166,16 @@ class MainActivity : AppCompatActivity(), FragmentCommunicator {
                 fragment.arguments = bundle
                 replaceFragment(fragment)
             }
+            "OrderConfirm" ->{
+                val fragment = SuccessFullyEnrolledFragment()
+                fragment.arguments = bundle
+                replaceFragment(fragment)
+            }
             "successFullyEnrolled" -> {
                 menuBookSuccessFullEnrollment()
+                val fragment = SuccessFullyEnrolledFragment()
+                fragment.arguments = bundle
+                replaceFragment(fragment)
             }
             "editProfile" -> {
                 menuProfileUpdate()
@@ -181,6 +189,11 @@ class MainActivity : AppCompatActivity(), FragmentCommunicator {
             "confirmOrder" -> {
                 menuConfirmOrder()
              }
+            "Help" -> {
+                replaceFragment(HelpFragment())
+                binding.appBar.btnHomeMenu.setImageResource(R.drawable.ic_home)
+                backPress = true
+            }
             "accessBook" -> {
                 val fragment = BookProfileFragment()
                 fragment.arguments = bundle
@@ -226,13 +239,12 @@ class MainActivity : AppCompatActivity(), FragmentCommunicator {
         }
     }
 
-
     private fun loadProfilePic(){
         val sharedPreferences: SharedPreferences = getSharedPreferences("Session", Context.MODE_PRIVATE)
         val session = sharedPreferences.getBoolean("session", false)
         if(session){
             val avatar = sharedPreferences.getString("avatar", "")
-            Picasso.get().load(avatar).fit().into(binding.appBar.btnProfileMenu)
+            Picasso.get().load(avatar).into(binding.appBar.btnProfileMenu)
         }
         else{
             val intent = Intent(applicationContext, Login::class.java)
@@ -241,6 +253,7 @@ class MainActivity : AppCompatActivity(), FragmentCommunicator {
         }
     }
 
+    // Mac access system but it's now deprecated
     private fun getMacAddress(): String {
         try {
             val all: List<NetworkInterface> =

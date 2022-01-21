@@ -21,15 +21,15 @@
             android:layout_marginTop="10dp"
             android:layout_marginStart="20dp"
             android:layout_marginEnd="20dp"
-            app:sliderAnimationDuration="600"
-            app:sliderAutoCycleDirection="back_and_forth"
+            app:sliderAnimationDuration="1000"
+            app:sliderAutoCycleDirection="right"
             app:sliderAutoCycleEnabled="true"
-            app:sliderIndicatorAnimationDuration="600"
+            app:sliderIndicatorAnimationDuration="1000"
             app:sliderIndicatorGravity="center_horizontal|bottom"
             app:sliderIndicatorOrientation="horizontal"
             app:sliderIndicatorSelectedColor="#5A5A5A"
             app:sliderIndicatorUnselectedColor="#FFF"
-            app:sliderScrollTimeInSec="1"
+            app:sliderScrollTimeInSec="10"
             app:sliderStartAutoCycle="true"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -39,7 +39,7 @@
         <LinearLayout
             android:id="@+id/linearLayout2"
             android:layout_width="match_parent"
-            android:layout_height="100dp"
+            android:layout_height="105dp"
             android:layout_margin="20dp"
             android:gravity="center"
             android:orientation="horizontal"
@@ -48,8 +48,9 @@
             app:layout_constraintTop_toBottomOf="@+id/imageSlider">
 
             <TextView
+                android:id="@+id/btnMenuYourBook"
                 android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_height="105dp"
                 android:layout_marginTop="5dp"
                 android:layout_marginEnd="20dp"
                 android:drawablePadding="-10dp"
@@ -59,8 +60,9 @@
                 tools:ignore="TextContrastCheck" />
 
             <TextView
+                android:id="@+id/btnMenuYourOrder"
                 android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_height="105dp"
                 android:text="@string/your_order"
                 android:layout_marginEnd="20dp"
                 android:layout_marginTop="5dp"
@@ -69,8 +71,9 @@
                 app:drawableTopCompat="@drawable/ic_orders" />
 
             <TextView
+                android:id="@+id/btnMenuHelp"
                 android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_height="105dp"
                 android:text="@string/help"
                 android:drawablePadding="-5dp"
                 android:textAlignment="center"
@@ -107,13 +110,13 @@
                 android:text="@string/free_video"
                 android:textSize="20sp"/>
 
-
         </LinearLayout>
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvYourBooks"
             android:layout_width="match_parent"
-            android:layout_height="220dp"
+            android:layout_height="wrap_content"
+            tools:itemCount="1"
             android:layout_marginStart="15dp"
             android:layout_marginEnd="15dp"
             android:scrollbars="horizontal"
@@ -140,8 +143,7 @@
             <TextView
                 android:layout_width="100dp"
                 android:layout_height="match_parent"
-                android:layout_alignParentStart="true"
-                android:layout_marginStart="20dp"
+                android:layout_marginStart="10dp"
                 android:text="@string/store"
                 android:textAlignment="viewStart"
                 android:textColor="@color/primary"
@@ -152,7 +154,8 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerViewBookListStore"
             android:layout_width="match_parent"
-            android:layout_height="220dp"
+            android:layout_height="wrap_content"
+            tools:itemCount="1"
             android:layout_marginStart="15dp"
             android:layout_marginEnd="15dp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -180,6 +183,7 @@
                 android:layout_alignParentStart="true"/>
 
             <TextView
+                android:id="@+id/btnAllRecentView"
                 android:layout_width="100dp"
                 android:layout_height="match_parent"
                 android:layout_alignParentEnd="true"
@@ -192,13 +196,16 @@
         </RelativeLayout>
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerViewBookListAccessVideo"
+            android:id="@+id/rvRecentView"
             android:layout_width="match_parent"
-            android:layout_height="500dp"
-            android:layout_margin="15dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="15dp"
+            android:layout_marginBottom="50dp"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/linearLayout5"
+            tools:itemCount="1"
             tools:listitem="@layout/viewed_video_items_" />
 
         <include

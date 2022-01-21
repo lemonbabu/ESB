@@ -50,7 +50,7 @@ class YourBooksAdapter(private var onYourBookClickListener: OnYourBookClickListe
     }
 
     override fun getItemCount(): Int {
-        Log.d("Your book ", "= " + filteredList.size)
+       // Log.d("Your book ", "= " + filteredList.size)
         return filteredList.size
     }
 

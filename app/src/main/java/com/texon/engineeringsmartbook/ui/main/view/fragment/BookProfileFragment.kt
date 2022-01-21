@@ -31,6 +31,7 @@ class BookProfileFragment : Fragment(R.layout.fragment_book_profile), BookDashbo
     private val videoLink: BooksApiInterfaces.TopicAccessInterface by lazy { RetrofitClient.getTopicAccess() }
     private lateinit var adapter : BookDashboardTopicContentAdapter
     private lateinit var rows : MutableList<TopicsContent>
+    private lateinit var recentSet: MutableSet<String>
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -90,9 +91,29 @@ class BookProfileFragment : Fragment(R.layout.fragment_book_profile), BookDashbo
         binding.rvContent.adapter = adapter
     }
 
-    override fun onSubTopicClickListener(id: Int) {
+    override fun onSubTopicClickListener(id: Int, avatar: String, name: String) {
         binding.loader.layoutLoader.visibility = View.VISIBLE
         getLink(id)
+
+        val subTopicSet = id.toString() + "œ" + avatar + "œ" + name
+        recentSet = mutableSetOf()
+
+
+        val sharedPreferences: SharedPreferences? = activity?.getSharedPreferences("RecentView", Context.MODE_PRIVATE)
+        val session = sharedPreferences?.getBoolean("session", false)
+        if(session == true){
+            recentSet = sharedPreferences.getStringSet("data", null) as MutableSet<String>
+        }
+
+        recentSet.add(subTopicSet)
+
+        val editor = sharedPreferences?.edit()
+        editor?.apply{
+            putBoolean("session", true)
+            putStringSet("data", recentSet)
+        }?.apply()
+
+        Log.d("Recent= ", recentSet.toString())
     }
 
 

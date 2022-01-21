@@ -76,7 +76,7 @@ class BookDashboardTopicContentAdapter (var topicsList: MutableList<TopicsConten
                 (holder as SubTopicViewHolder).subContent.text = row.subTopic.name
                 Picasso.get().load(row.subTopic.avatar).into(holder.img)
                 holder.subContent.setOnClickListener {
-                    onSubTopicClickListener.onSubTopicClickListener(row.subTopic.id)
+                    onSubTopicClickListener.onSubTopicClickListener(row.subTopic.id, row.subTopic.avatar, row.subTopic.name)
                 }
             }
         }
@@ -85,7 +85,7 @@ class BookDashboardTopicContentAdapter (var topicsList: MutableList<TopicsConten
     }
 
     interface OnSubTopicClickListener{
-        fun onSubTopicClickListener(id: Int)
+        fun onSubTopicClickListener(id: Int, avatar: String, name: String)
     }
 
     override fun getItemCount() = topicsList.size

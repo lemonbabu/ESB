@@ -64,7 +64,7 @@ class PayMethodFragment : Fragment(R.layout.fragment_pay_method) {
             avatar = sharedPreferences.getString("avatar", "")!!
             title = sharedPreferences.getString("title", "")!!
             binding.bookInfo.txtBookTitle.text = title
-            Picasso.get().load(avatar).fit().into(binding.bookInfo.imgBookCover)
+            Picasso.get().load(avatar).into(binding.bookInfo.imgBookCover)
         }
     }
 
